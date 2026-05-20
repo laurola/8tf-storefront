@@ -16,43 +16,113 @@ export default async function Nav() {
   ])
 
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
-        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
-          <div className="flex-1 basis-0 h-full flex items-center">
-            <div className="h-full">
-              <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
-            </div>
+    <div className="sticky top-0 inset-x-0 z-50">
+      <header
+        className="w-full h-16"
+        style={{
+          backgroundColor: "#0a0a0a",
+          boxShadow: "0 1px 20px rgba(0,0,0,0.4)",
+        }}
+      >
+        <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between w-full h-full">
+          {/* Left: mobile menu */}
+          <div className="flex items-center h-full lg:hidden">
+            <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
           </div>
 
+          {/* Center/Left: Logo */}
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="flex items-center gap-1 text-xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity"
               data-testid="nav-store-link"
             >
-              Medusa Store
+              <span>8TF</span>
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  backgroundColor: "#22c55e",
+                  marginBottom: "2px",
+                  flexShrink: 0,
+                }}
+              />
             </LocalizedClientLink>
           </div>
 
-          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
+          {/* Center: Nav links (desktop) */}
+          <div className="hidden lg:flex items-center gap-x-8 h-full">
+            <LocalizedClientLink
+              href="/store"
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
+            >
+              Shop
+            </LocalizedClientLink>
+            <LocalizedClientLink
+              href="/categories"
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
+            >
+              Kategorien
+            </LocalizedClientLink>
+            <LocalizedClientLink
+              href="/about"
+              className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
+            >
+              Über uns
+            </LocalizedClientLink>
+          </div>
+
+          {/* Right: Account + Cart */}
+          <div className="flex items-center gap-x-5 h-full">
+            <div className="hidden lg:flex items-center">
               <LocalizedClientLink
-                className="hover:text-ui-fg-base"
                 href="/account"
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
                 data-testid="nav-account-link"
+                aria-label="Account"
               >
-                Account
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
               </LocalizedClientLink>
             </div>
+
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
+                  className="text-white/80 hover:text-white transition-colors duration-150 flex items-center gap-1.5"
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                  </svg>
+                  <span className="text-sm font-medium">0</span>
                 </LocalizedClientLink>
               }
             >

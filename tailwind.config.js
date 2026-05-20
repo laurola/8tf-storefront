@@ -34,6 +34,14 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        brand: {
+          green: "#4ade80",
+          "green-dark": "#16a34a",
+          "green-light": "#86efac",
+          black: "#0a0a0a",
+          "black-soft": "#111111",
+          "black-card": "#1a1a1a",
+        },
       },
       borderRadius: {
         none: "0px",
