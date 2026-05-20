@@ -1,6 +1,35 @@
 import { Dialog, Transition } from "@headlessui/react"
-import { Button, clx } from "@medusajs/ui"
 import React, { Fragment, useMemo } from "react"
+
+function clx(...args: (string | false | null | undefined | Record<string, boolean>)[]) {
+  return args.flatMap((a) => {
+    if (!a) return []
+    if (typeof a === "string") return [a]
+    return Object.entries(a).filter(([, v]) => v).map(([k]) => k)
+  }).join(" ")
+}
+
+const Button = ({ children, onClick, disabled, className, variant: _v, isLoading, "data-testid": dt }: { children?: React.ReactNode; onClick?: () => void; disabled?: boolean; className?: string; variant?: string; isLoading?: boolean; "data-testid"?: string }) => (
+  <button
+    onClick={onClick}
+    disabled={disabled || isLoading}
+    className={className}
+    data-testid={dt}
+    style={{
+      backgroundColor: disabled ? "#333" : "#4ade80",
+      color: disabled ? "#666" : "#0a0a0a",
+      fontWeight: 700,
+      fontSize: "15px",
+      padding: "14px 20px",
+      borderRadius: "4px",
+      border: "none",
+      cursor: disabled ? "not-allowed" : "pointer",
+      opacity: isLoading ? 0.7 : 1,
+    }}
+  >
+    {isLoading ? "..." : children}
+  </button>
+)
 
 import useToggleState from "@lib/hooks/use-toggle-state"
 import ChevronDown from "@modules/common/icons/chevron-down"
