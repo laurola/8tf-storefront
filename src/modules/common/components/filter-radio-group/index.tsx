@@ -1,5 +1,5 @@
 import { EllipseMiniSolid } from "@medusajs/icons"
-import { Label, RadioGroup, Text, clx } from "@medusajs/ui"
+import { RadioGroup } from "@medusajs/ui"
 
 type FilterRadioGroupProps = {
   title: string
@@ -20,36 +20,44 @@ const FilterRadioGroup = ({
   "data-testid": dataTestId,
 }: FilterRadioGroupProps) => {
   return (
-    <div className="flex gap-x-3 flex-col gap-y-3">
-      <Text className="txt-compact-small-plus text-ui-fg-muted">{title}</Text>
-      <RadioGroup data-testid={dataTestId} onValueChange={handleChange}>
+    <div className="flex items-center gap-x-4">
+      <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#6b7280" }}>
+        {title}
+      </span>
+      <RadioGroup
+        data-testid={dataTestId}
+        onValueChange={handleChange}
+        className="flex flex-row gap-x-2"
+      >
         {items?.map((i) => (
-          <div
-            key={i.value}
-            className={clx("flex gap-x-2 items-center", {
-              "ml-[-23px]": i.value === value,
-            })}
-          >
-            {i.value === value && <EllipseMiniSolid />}
+          <div key={i.value} className="flex items-center">
             <RadioGroup.Item
               checked={i.value === value}
               className="hidden peer"
               id={i.value}
               value={i.value}
             />
-            <Label
+            <label
               htmlFor={i.value}
-              className={clx(
-                "!txt-compact-small !transform-none text-ui-fg-subtle hover:cursor-pointer",
-                {
-                  "text-ui-fg-base": i.value === value,
-                }
-              )}
+              className="cursor-pointer px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-150 border select-none"
+              style={
+                i.value === value
+                  ? {
+                      backgroundColor: "rgba(74, 222, 128, 0.12)",
+                      borderColor: "#4ade80",
+                      color: "#4ade80",
+                    }
+                  : {
+                      backgroundColor: "transparent",
+                      borderColor: "#3a3a3a",
+                      color: "#9ca3af",
+                    }
+              }
               data-testid="radio-label"
               data-active={i.value === value}
             >
               {i.label}
-            </Label>
+            </label>
           </div>
         ))}
       </RadioGroup>

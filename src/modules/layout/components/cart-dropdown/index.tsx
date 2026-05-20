@@ -8,7 +8,6 @@ import {
 } from "@headlessui/react"
 import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
 import DeleteButton from "@modules/common/components/delete-button"
 import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
@@ -82,10 +81,12 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <PopoverButton className="h-full">
           <LocalizedClientLink
-            className="hover:text-ui-fg-base"
+            className="hover:text-white text-gray-300 transition-colors duration-150"
             href="/cart"
             data-testid="nav-cart-link"
-          >{`Cart (${totalItems})`}</LocalizedClientLink>
+          >
+            {`Warenkorb (${totalItems})`}
+          </LocalizedClientLink>
         </PopoverButton>
         <Transition
           show={cartDropdownOpen}
@@ -99,15 +100,34 @@ const CartDropdown = ({
         >
           <PopoverPanel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 w-[420px] rounded-b-2xl overflow-hidden shadow-2xl"
+            style={{
+              backgroundColor: "#111111",
+              border: "1px solid #2a2a2a",
+              borderTop: "none",
+            }}
             data-testid="nav-cart-dropdown"
           >
-            <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Cart</h3>
+            {/* Header */}
+            <div
+              className="px-5 py-4 flex items-center justify-between"
+              style={{ borderBottom: "1px solid #2a2a2a" }}
+            >
+              <h3 className="text-base font-bold text-white">Warenkorb</h3>
+              {totalItems > 0 && (
+                <span
+                  className="text-xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ backgroundColor: "#4ade80", color: "#000" }}
+                >
+                  {totalItems}
+                </span>
+              )}
             </div>
+
             {cartState && cartState.items?.length ? (
               <>
-                <div className="overflow-y-scroll max-h-[402px] px-4 grid grid-cols-1 gap-y-8 no-scrollbar p-px">
+                {/* Items list */}
+                <div className="overflow-y-scroll max-h-[360px] px-4 py-3 flex flex-col gap-y-3 no-scrollbar">
                   {cartState.items
                     .sort((a, b) => {
                       return (a.created_at ?? "") > (b.created_at ?? "")
@@ -116,13 +136,18 @@ const CartDropdown = ({
                     })
                     .map((item) => (
                       <div
-                        className="grid grid-cols-[122px_1fr] gap-x-4"
+                        className="flex items-center gap-x-3 rounded-xl p-3"
+                        style={{
+                          backgroundColor: "#1a1a1a",
+                          border: "1px solid #2a2a2a",
+                        }}
                         key={item.id}
                         data-testid="cart-item"
                       >
                         <LocalizedClientLink
                           href={`/products/${item.product_handle}`}
-                          className="w-24"
+                          className="w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden"
+                          style={{ backgroundColor: "#0a0a0a" }}
                         >
                           <Thumbnail
                             thumbnail={item.thumbnail}
@@ -130,58 +155,66 @@ const CartDropdown = ({
                             size="square"
                           />
                         </LocalizedClientLink>
-                        <div className="flex flex-col justify-between flex-1">
-                          <div className="flex flex-col flex-1">
-                            <div className="flex items-start justify-between">
-                              <div className="flex flex-col overflow-ellipsis whitespace-nowrap mr-4 w-[180px]">
-                                <h3 className="text-base-regular overflow-hidden text-ellipsis">
-                                  <LocalizedClientLink
-                                    href={`/products/${item.product_handle}`}
-                                    data-testid="product-link"
-                                  >
-                                    {item.title}
-                                  </LocalizedClientLink>
-                                </h3>
-                                <LineItemOptions
-                                  variant={item.variant}
-                                  data-testid="cart-item-variant"
-                                  data-value={item.variant}
-                                />
-                                <span
-                                  data-testid="cart-item-quantity"
-                                  data-value={item.quantity}
-                                >
-                                  Quantity: {item.quantity}
+                        <div className="flex flex-col flex-1 min-w-0">
+                          <div className="flex items-start justify-between gap-x-2">
+                            <div className="flex flex-col min-w-0">
+                              <LocalizedClientLink
+                                href={`/products/${item.product_handle}`}
+                                data-testid="product-link"
+                              >
+                                <span className="text-sm font-semibold text-white truncate block">
+                                  {item.title}
                                 </span>
-                              </div>
-                              <div className="flex justify-end">
-                                <LineItemPrice
-                                  item={item}
-                                  style="tight"
-                                  currencyCode={cartState.currency_code}
-                                />
-                              </div>
+                              </LocalizedClientLink>
+                              <LineItemOptions
+                                variant={item.variant}
+                                data-testid="cart-item-variant"
+                                data-value={item.variant}
+                              />
+                              <span
+                                className="text-xs mt-0.5"
+                                style={{ color: "#6b7280" }}
+                                data-testid="cart-item-quantity"
+                                data-value={item.quantity}
+                              >
+                                Menge: {item.quantity}
+                              </span>
+                            </div>
+                            <div
+                              className="text-sm font-bold flex-shrink-0"
+                              style={{ color: "#4ade80" }}
+                            >
+                              <LineItemPrice
+                                item={item}
+                                style="tight"
+                                currencyCode={cartState.currency_code}
+                              />
                             </div>
                           </div>
                           <DeleteButton
                             id={item.id}
-                            className="mt-1"
+                            className="mt-2 text-xs self-start text-gray-500 hover:text-red-400 transition-colors duration-150"
                             data-testid="cart-item-remove-button"
                           >
-                            Remove
+                            Entfernen
                           </DeleteButton>
                         </div>
                       </div>
                     ))}
                 </div>
-                <div className="p-4 flex flex-col gap-y-4 text-small-regular">
+
+                {/* Footer */}
+                <div
+                  className="px-5 py-4 flex flex-col gap-y-3"
+                  style={{ borderTop: "1px solid #2a2a2a" }}
+                >
                   <div className="flex items-center justify-between">
-                    <span className="text-ui-fg-base font-semibold">
-                      Subtotal{" "}
-                      <span className="font-normal">(excl. taxes)</span>
+                    <span className="text-sm" style={{ color: "#9ca3af" }}>
+                      Zwischensumme{" "}
+                      <span className="text-xs">(ohne Steuern)</span>
                     </span>
                     <span
-                      className="text-large-semi"
+                      className="text-base font-bold text-white"
                       data-testid="cart-subtotal"
                       data-value={subtotal}
                     >
@@ -192,32 +225,70 @@ const CartDropdown = ({
                     </span>
                   </div>
                   <LocalizedClientLink href="/cart" passHref>
-                    <Button
-                      className="w-full"
-                      size="large"
+                    <button
+                      className="w-full h-11 rounded-xl font-bold text-sm text-black transition-colors duration-200"
+                      style={{ backgroundColor: "#4ade80" }}
+                      onMouseEnter={(e) => {
+                        ;(
+                          e.currentTarget as HTMLButtonElement
+                        ).style.backgroundColor = "#6ee7a0"
+                      }}
+                      onMouseLeave={(e) => {
+                        ;(
+                          e.currentTarget as HTMLButtonElement
+                        ).style.backgroundColor = "#4ade80"
+                      }}
                       data-testid="go-to-cart-button"
                     >
-                      Go to cart
-                    </Button>
+                      Zur Kasse
+                    </button>
                   </LocalizedClientLink>
                 </div>
               </>
             ) : (
-              <div>
-                <div className="flex py-16 flex-col gap-y-4 items-center justify-center">
-                  <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
-                    <span>0</span>
-                  </div>
-                  <span>Your shopping bag is empty.</span>
-                  <div>
-                    <LocalizedClientLink href="/store">
-                      <>
-                        <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
-                      </>
-                    </LocalizedClientLink>
-                  </div>
+              <div className="flex py-16 flex-col gap-y-4 items-center justify-center">
+                <div
+                  className="flex items-center justify-center w-12 h-12 rounded-full"
+                  style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#4ade80"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                  </svg>
                 </div>
+                <span className="text-sm" style={{ color: "#6b7280" }}>
+                  Dein Warenkorb ist leer.
+                </span>
+                <LocalizedClientLink href="/store">
+                  <button
+                    className="px-5 py-2 rounded-lg text-sm font-bold text-black transition-colors duration-200"
+                    style={{ backgroundColor: "#4ade80" }}
+                    onMouseEnter={(e) => {
+                      ;(
+                        e.currentTarget as HTMLButtonElement
+                      ).style.backgroundColor = "#6ee7a0"
+                    }}
+                    onMouseLeave={(e) => {
+                      ;(
+                        e.currentTarget as HTMLButtonElement
+                      ).style.backgroundColor = "#4ade80"
+                    }}
+                    onClick={close}
+                  >
+                    Jetzt shoppen
+                  </button>
+                </LocalizedClientLink>
               </div>
             )}
           </PopoverPanel>

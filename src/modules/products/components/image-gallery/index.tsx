@@ -1,39 +1,87 @@
+"use client"
+
 import { HttpTypes } from "@medusajs/types"
-import { Container } from "@medusajs/ui"
 import Image from "next/image"
+import { useState } from "react"
 
 type ImageGalleryProps = {
   images: HttpTypes.StoreProductImage[]
 }
 
 const ImageGallery = ({ images }: ImageGalleryProps) => {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  if (!images || images.length === 0) {
+    return (
+      <div
+        className="w-full aspect-square rounded-xl"
+        style={{ backgroundColor: "#111111" }}
+      />
+    )
+  }
+
+  const selectedImage = images[selectedIndex]
+
   return (
-    <div className="flex items-start relative">
-      <div className="flex flex-col flex-1 small:mx-16 gap-y-4">
-        {images.map((image, index) => {
-          return (
-            <Container
-              key={image.id}
-              className="relative aspect-[29/34] w-full overflow-hidden bg-ui-bg-subtle"
-              id={image.id}
-            >
-              {!!image.url && (
-                <Image
-                  src={image.url}
-                  priority={index <= 2 ? true : false}
-                  className="absolute inset-0 rounded-rounded"
-                  alt={`Product image ${index + 1}`}
-                  fill
-                  sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-                  style={{
-                    objectFit: "cover",
-                  }}
-                />
-              )}
-            </Container>
-          )
-        })}
+    <div className="flex flex-col gap-y-4">
+      {/* Main image */}
+      <div
+        className="relative w-full overflow-hidden rounded-xl"
+        style={{
+          backgroundColor: "#111111",
+          aspectRatio: "4/5",
+        }}
+      >
+        {selectedImage?.url && (
+          <Image
+            src={selectedImage.url}
+            alt={`Product image ${selectedIndex + 1}`}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px"
+            style={{ objectFit: "cover" }}
+            className="rounded-xl"
+          />
+        )}
       </div>
+
+      {/* Thumbnail strip — only show if more than 1 image */}
+      {images.length > 1 && (
+        <div className="flex gap-x-3 overflow-x-auto pb-1">
+          {images.map((image, index) => {
+            const isSelected = index === selectedIndex
+            return (
+              <button
+                key={image.id ?? index}
+                onClick={() => setSelectedIndex(index)}
+                className="relative flex-shrink-0 overflow-hidden rounded-lg transition-all duration-150"
+                style={{
+                  width: "72px",
+                  height: "72px",
+                  backgroundColor: "#111111",
+                  border: isSelected
+                    ? "2px solid #4ade80"
+                    : "2px solid #262626",
+                  padding: 0,
+                  cursor: "pointer",
+                }}
+                aria-label={`View image ${index + 1}`}
+              >
+                {image.url && (
+                  <Image
+                    src={image.url}
+                    alt={`Thumbnail ${index + 1}`}
+                    fill
+                    sizes="72px"
+                    style={{ objectFit: "cover" }}
+                    className="rounded-md"
+                  />
+                )}
+              </button>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }

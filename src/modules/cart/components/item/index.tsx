@@ -1,6 +1,6 @@
 "use client"
 
-import { Table, Text, clx } from "@medusajs/ui"
+import { clx } from "@medusajs/ui"
 import { updateLineItem } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
 import CartItemSelect from "@modules/cart/components/cart-item-select"
@@ -45,44 +45,72 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
   const maxQuantity = item.variant?.manage_inventory ? 10 : maxQtyFromInventory
 
   return (
-    <Table.Row className="w-full" data-testid="product-row">
-      <Table.Cell className="!pl-0 p-4 w-24">
-        <LocalizedClientLink
-          href={`/products/${item.product_handle}`}
-          className={clx("flex", {
-            "w-16": type === "preview",
-            "small:w-24 w-12": type === "full",
-          })}
-        >
-          <Thumbnail
-            thumbnail={item.thumbnail}
-            images={item.variant?.product?.images}
-            size="square"
-          />
+    <div
+      className="rounded-xl p-4 flex flex-col gap-y-2"
+      style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+      data-testid="product-row"
+    >
+    <div className="flex items-center gap-x-4">
+      {/* Thumbnail */}
+      <LocalizedClientLink
+        href={`/products/${item.product_handle}`}
+        className={clx("flex-shrink-0 rounded-lg overflow-hidden", {
+          "w-16 h-16": type === "preview",
+          "w-20 h-20 small:w-24 small:h-24": type === "full",
+        })}
+        style={{ backgroundColor: "#0a0a0a" }}
+      >
+        <Thumbnail
+          thumbnail={item.thumbnail}
+          images={item.variant?.product?.images}
+          size="square"
+        />
+      </LocalizedClientLink>
+
+      {/* Title + variant */}
+      <div className="flex-1 min-w-0">
+        <LocalizedClientLink href={`/products/${item.product_handle}`}>
+          <span
+            className="block font-semibold text-white truncate text-sm leading-tight"
+            data-testid="product-title"
+          >
+            {item.product_title}
+          </span>
         </LocalizedClientLink>
-      </Table.Cell>
+        <LineItemOptions
+          variant={item.variant}
+          data-testid="product-variant"
+        />
 
-      <Table.Cell className="text-left">
-        <Text
-          className="txt-medium-plus text-ui-fg-base"
-          data-testid="product-title"
-        >
-          {item.product_title}
-        </Text>
-        <LineItemOptions variant={item.variant} data-testid="product-variant" />
-      </Table.Cell>
+        {type === "preview" && (
+          <span className="flex gap-x-1 mt-1 text-xs" style={{ color: "#9ca3af" }}>
+            <span>{item.quantity}x </span>
+            <LineItemUnitPrice
+              item={item}
+              style="tight"
+              currencyCode={currencyCode}
+            />
+          </span>
+        )}
+      </div>
 
+      {/* Quantity selector */}
       {type === "full" && (
-        <Table.Cell>
-          <div className="flex gap-2 items-center w-28">
-            <DeleteButton id={item.id} data-testid="product-delete-button" />
+        <div className="flex items-center gap-x-2 flex-shrink-0">
+          <DeleteButton
+            id={item.id}
+            data-testid="product-delete-button"
+            className="text-gray-500 hover:text-red-500 transition-colors duration-150"
+          />
+          <div className="relative">
             <CartItemSelect
               value={item.quantity}
-              onChange={(value) => changeQuantity(parseInt(value.target.value))}
+              onChange={(value) =>
+                changeQuantity(parseInt(value.target.value))
+              }
               className="w-14 h-10 p-4"
               data-testid="product-select-button"
             >
-              {/* TODO: Update this with the v2 way of managing inventory */}
               {Array.from(
                 {
                   length: Math.min(maxQuantity, 10),
@@ -93,51 +121,52 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
                   </option>
                 )
               )}
-
               <option value={1} key={1}>
                 1
               </option>
             </CartItemSelect>
-            {updating && <Spinner />}
           </div>
-          <ErrorMessage error={error} data-testid="product-error-message" />
-        </Table.Cell>
+          {updating && <Spinner />}
+        </div>
       )}
 
+      {/* Unit price (full, large screen) */}
       {type === "full" && (
-        <Table.Cell className="hidden small:table-cell">
+        <div
+          className="hidden small:flex items-center justify-end w-20 flex-shrink-0 text-sm"
+          style={{ color: "#9ca3af" }}
+        >
           <LineItemUnitPrice
             item={item}
             style="tight"
             currencyCode={currencyCode}
           />
-        </Table.Cell>
+        </div>
       )}
 
-      <Table.Cell className="!pr-0">
+      {/* Total price */}
+      <div
+        className={clx("flex-shrink-0 text-right", {
+          "flex flex-col items-end h-full justify-center": type === "preview",
+        })}
+      >
         <span
-          className={clx("!pr-0", {
-            "flex flex-col items-end h-full justify-center": type === "preview",
-          })}
+          className="font-bold text-sm"
+          style={{ color: "#4ade80" }}
         >
-          {type === "preview" && (
-            <span className="flex gap-x-1 ">
-              <Text className="text-ui-fg-muted">{item.quantity}x </Text>
-              <LineItemUnitPrice
-                item={item}
-                style="tight"
-                currencyCode={currencyCode}
-              />
-            </span>
-          )}
           <LineItemPrice
             item={item}
             style="tight"
             currencyCode={currencyCode}
           />
         </span>
-      </Table.Cell>
-    </Table.Row>
+      </div>
+
+    </div>
+      {error && (
+        <ErrorMessage error={error} data-testid="product-error-message" />
+      )}
+    </div>
   )
 }
 

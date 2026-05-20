@@ -1,23 +1,55 @@
-import { Heading, Text } from "@medusajs/ui"
-
-import InteractiveLink from "@modules/common/components/interactive-link"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const EmptyCartMessage = () => {
   return (
-    <div className="py-48 px-2 flex flex-col justify-center items-start" data-testid="empty-cart-message">
-      <Heading
-        level="h1"
-        className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
-      >
-        Cart
-      </Heading>
-      <Text className="text-base-regular mt-4 mb-6 max-w-[32rem]">
-        You don&apos;t have anything in your cart. Let&apos;s change that, use
-        the link below to start browsing our products.
-      </Text>
-      <div>
-        <InteractiveLink href="/store">Explore products</InteractiveLink>
+    <div
+      className="py-48 px-2 flex flex-col justify-center items-center text-center"
+      data-testid="empty-cart-message"
+    >
+      <div className="mb-8" style={{ color: "#2a2a2a" }}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="96"
+          height="96"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#4ade80"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+          <line x1="12" y1="10" x2="12" y2="14" />
+          <line x1="10" y1="12" x2="14" y2="12" />
+        </svg>
       </div>
+
+      <h1 className="text-3xl font-bold text-white mb-4">
+        Dein Warenkorb ist leer
+      </h1>
+
+      <p className="text-base mb-8 max-w-sm" style={{ color: "#6b7280" }}>
+        Füge Artikel hinzu, um mit dem Einkauf zu beginnen.
+      </p>
+
+      <LocalizedClientLink href="/store">
+        <button
+          className="px-8 py-3 rounded-xl font-bold text-black transition-colors duration-200"
+          style={{ backgroundColor: "#4ade80" }}
+          onMouseEnter={(e) => {
+            ;(e.currentTarget as HTMLButtonElement).style.backgroundColor =
+              "#6ee7a0"
+          }}
+          onMouseLeave={(e) => {
+            ;(e.currentTarget as HTMLButtonElement).style.backgroundColor =
+              "#4ade80"
+          }}
+        >
+          Jetzt shoppen
+        </button>
+      </LocalizedClientLink>
     </div>
   )
 }

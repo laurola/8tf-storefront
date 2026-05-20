@@ -2,7 +2,7 @@
 
 import { Popover, PopoverPanel, Transition } from "@headlessui/react"
 import { ArrowRightMini, XMark } from "@medusajs/icons"
-import { Text, clx, useToggleState } from "@medusajs/ui"
+import { clx, useToggleState } from "@medusajs/ui"
 import { Fragment } from "react"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -37,7 +37,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
               <div className="relative flex h-full">
                 <Popover.Button
                   data-testid="nav-menu-button"
-                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
+                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none text-white hover:text-[#4ade80]"
                 >
                   Menu
                 </Popover.Button>
@@ -45,7 +45,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
 
               {open && (
                 <div
-                  className="fixed inset-0 z-[50] bg-black/0 pointer-events-auto"
+                  className="fixed inset-0 z-[50] bg-black/60 pointer-events-auto"
                   onClick={close}
                   data-testid="side-menu-backdrop"
                 />
@@ -54,20 +54,24 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
               <Transition
                 show={open}
                 as={Fragment}
-                enter="transition ease-out duration-150"
-                enterFrom="opacity-0"
-                enterTo="opacity-100 backdrop-blur-2xl"
+                enter="transition ease-out duration-200"
+                enterFrom="opacity-0 -translate-x-4"
+                enterTo="opacity-100 translate-x-0"
                 leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 backdrop-blur-2xl"
-                leaveTo="opacity-0"
+                leaveFrom="opacity-100 translate-x-0"
+                leaveTo="opacity-0 -translate-x-4"
               >
-                <PopoverPanel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-[51] inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
+                <PopoverPanel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-[51] inset-x-0 text-sm m-2">
                   <div
                     data-testid="nav-menu-popup"
-                    className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6"
+                    className="flex flex-col h-full bg-[rgba(10,10,10,0.97)] border border-[#1a1a1a] rounded-xl justify-between p-6 shadow-2xl"
                   >
                     <div className="flex justify-end" id="xmark">
-                      <button data-testid="close-menu-button" onClick={close}>
+                      <button
+                        data-testid="close-menu-button"
+                        onClick={close}
+                        className="text-gray-400 hover:text-white transition-colors duration-150 p-1"
+                      >
                         <XMark />
                       </button>
                     </div>
@@ -77,7 +81,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                           <li key={name}>
                             <LocalizedClientLink
                               href={href}
-                              className="text-3xl leading-10 hover:text-ui-fg-disabled"
+                              className="text-3xl leading-10 font-semibold text-white hover:text-[#4ade80] transition-colors duration-200"
                               onClick={close}
                               data-testid={`${name.toLowerCase()}-link`}
                             >
@@ -90,7 +94,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                     <div className="flex flex-col gap-y-6">
                       {!!locales?.length && (
                         <div
-                          className="flex justify-between"
+                          className="flex justify-between text-gray-400 hover:text-white transition-colors duration-150"
                           onMouseEnter={languageToggleState.open}
                           onMouseLeave={languageToggleState.close}
                         >
@@ -108,7 +112,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                         </div>
                       )}
                       <div
-                        className="flex justify-between"
+                        className="flex justify-between text-gray-400 hover:text-white transition-colors duration-150"
                         onMouseEnter={countryToggleState.open}
                         onMouseLeave={countryToggleState.close}
                       >
@@ -125,10 +129,9 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                           )}
                         />
                       </div>
-                      <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Medusa Store. All rights
-                        reserved.
-                      </Text>
+                      <p className="text-xs text-gray-600">
+                        © {new Date().getFullYear()} 8TF Store. All rights reserved.
+                      </p>
                     </div>
                   </div>
                 </PopoverPanel>

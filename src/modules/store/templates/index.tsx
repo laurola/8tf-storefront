@@ -20,14 +20,34 @@ const StoreTemplate = ({
 
   return (
     <div
-      className="flex flex-col small:flex-row small:items-start py-6 content-container"
+      className="min-h-screen w-full"
+      style={{ backgroundColor: "#0a0a0a" }}
       data-testid="category-container"
     >
-      <RefinementList sortBy={sort} />
-      <div className="w-full">
-        <div className="mb-8 text-2xl-semi">
-          <h1 data-testid="store-page-title">All products</h1>
+      <div className="content-container py-8">
+        {/* Page header */}
+        <div className="mb-8">
+          <h1
+            className="text-3xl font-bold tracking-tight"
+            style={{ color: "#ffffff" }}
+            data-testid="store-page-title"
+          >
+            Shop
+          </h1>
+          <p className="mt-1 text-sm" style={{ color: "#6b7280" }}>
+            All products
+          </p>
         </div>
+
+        {/* Toolbar row: sort on the left */}
+        <div
+          className="flex items-center gap-4 mb-8 p-4 rounded-xl border"
+          style={{ backgroundColor: "#1a1a1a", borderColor: "#2a2a2a" }}
+        >
+          <RefinementList sortBy={sort} />
+        </div>
+
+        {/* Product grid */}
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
             sortBy={sort}

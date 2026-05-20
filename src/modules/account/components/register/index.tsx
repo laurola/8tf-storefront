@@ -17,34 +17,35 @@ const Register = ({ setCurrentView }: Props) => {
 
   return (
     <div
-      className="max-w-sm flex flex-col items-center"
+      className="w-full max-w-sm rounded-xl p-8 flex flex-col items-center"
+      style={{ backgroundColor: "#1a1a1a" }}
       data-testid="register-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">
-        Become a Medusa Store Member
+      <h1 className="text-xl font-bold uppercase tracking-widest mb-2" style={{ color: "#fff" }}>
+        Konto erstellen
       </h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your Medusa Store Member profile, and get access to an enhanced
-        shopping experience.
+      <p className="text-center text-sm mb-8" style={{ color: "#888" }}>
+        Werde 8TF-Mitglied und genieße exklusive Vorteile.
       </p>
+
       <form className="w-full flex flex-col" action={formAction}>
-        <div className="flex flex-col w-full gap-y-2">
+        <div className="flex flex-col w-full gap-y-3">
           <Input
-            label="First name"
+            label="Vorname"
             name="first_name"
             required
             autoComplete="given-name"
             data-testid="first-name-input"
           />
           <Input
-            label="Last name"
+            label="Nachname"
             name="last_name"
             required
             autoComplete="family-name"
             data-testid="last-name-input"
           />
           <Input
-            label="Email"
+            label="E-Mail"
             name="email"
             required
             type="email"
@@ -52,14 +53,14 @@ const Register = ({ setCurrentView }: Props) => {
             data-testid="email-input"
           />
           <Input
-            label="Phone"
+            label="Telefon"
             name="phone"
             type="tel"
             autoComplete="tel"
             data-testid="phone-input"
           />
           <Input
-            label="Password"
+            label="Passwort"
             name="password"
             required
             type="password"
@@ -67,37 +68,43 @@ const Register = ({ setCurrentView }: Props) => {
             data-testid="password-input"
           />
         </div>
+
         <ErrorMessage error={message} data-testid="register-error" />
-        <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to Medusa Store&apos;s{" "}
+
+        <p className="text-center text-xs mt-6" style={{ color: "#555" }}>
+          Mit der Registrierung stimmst du den{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
-            className="underline"
+            className="underline transition-colors hover:text-white"
+            style={{ color: "#888" }}
           >
-            Privacy Policy
+            Datenschutzbestimmungen
           </LocalizedClientLink>{" "}
-          and{" "}
+          und den{" "}
           <LocalizedClientLink
             href="/content/terms-of-use"
-            className="underline"
+            className="underline transition-colors hover:text-white"
+            style={{ color: "#888" }}
           >
-            Terms of Use
-          </LocalizedClientLink>
-          .
-        </span>
+            Nutzungsbedingungen
+          </LocalizedClientLink>{" "}
+          zu.
+        </p>
+
         <SubmitButton className="w-full mt-6" data-testid="register-button">
-          Join
+          Registrieren
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Already a member?{" "}
+
+      <span className="text-center text-sm mt-6" style={{ color: "#666" }}>
+        Bereits Mitglied?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          className="underline"
+          className="font-semibold transition-colors hover:underline"
+          style={{ color: "#4ade80" }}
         >
-          Sign in
+          Anmelden
         </button>
-        .
       </span>
     </div>
   )

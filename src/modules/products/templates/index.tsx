@@ -2,7 +2,6 @@ import React, { Suspense } from "react"
 
 import ImageGallery from "@modules/products/components/image-gallery"
 import ProductActions from "@modules/products/components/product-actions"
-import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta"
 import ProductTabs from "@modules/products/components/product-tabs"
 import RelatedProducts from "@modules/products/components/related-products"
 import ProductInfo from "@modules/products/templates/product-info"
@@ -30,33 +29,38 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   }
 
   return (
-    <>
+    <div style={{ backgroundColor: "#0a0a0a", minHeight: "100vh" }}>
       <div
-        className="content-container  flex flex-col small:flex-row small:items-start py-6 relative"
+        className="content-container py-8 lg:py-12"
         data-testid="product-container"
       >
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-6">
-          <ProductInfo product={product} />
-          <ProductTabs product={product} />
-        </div>
-        <div className="block w-full relative">
-          <ImageGallery images={images} />
-        </div>
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
-          <ProductOnboardingCta />
-          <Suspense
-            fallback={
-              <ProductActions
-                disabled={true}
-                product={product}
-                region={region}
-              />
-            }
-          >
-            <ProductActionsWrapper id={product.id} region={region} />
-          </Suspense>
+        <div className="flex flex-col lg:flex-row lg:gap-x-12 xl:gap-x-16">
+          {/* Left column: Image gallery (60%) */}
+          <div className="w-full lg:w-[60%]">
+            <ImageGallery images={images} />
+          </div>
+
+          {/* Right column: Product info + actions (40%), sticky on desktop */}
+          <div className="w-full lg:w-[40%] mt-8 lg:mt-0">
+            <div className="lg:sticky lg:top-24 flex flex-col gap-y-6">
+              <ProductInfo product={product} />
+              <Suspense
+                fallback={
+                  <ProductActions
+                    disabled={true}
+                    product={product}
+                    region={region}
+                  />
+                }
+              >
+                <ProductActionsWrapper id={product.id} region={region} />
+              </Suspense>
+              <ProductTabs product={product} />
+            </div>
+          </div>
         </div>
       </div>
+
       <div
         className="content-container my-16 small:my-32"
         data-testid="related-products-container"
@@ -65,7 +69,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           <RelatedProducts product={product} countryCode={countryCode} />
         </Suspense>
       </div>
-    </>
+    </div>
   )
 }
 

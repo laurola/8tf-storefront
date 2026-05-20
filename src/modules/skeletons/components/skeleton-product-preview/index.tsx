@@ -1,12 +1,13 @@
-import { Container } from "@medusajs/ui"
-
 const SkeletonProductPreview = () => {
   return (
-    <div className="animate-pulse">
-      <Container className="aspect-[9/16] w-full bg-gray-100 bg-ui-bg-subtle" />
-      <div className="flex justify-between text-base-regular mt-2">
-        <div className="w-2/5 h-6 bg-gray-100"></div>
-        <div className="w-1/5 h-6 bg-gray-100"></div>
+    <div
+      className="animate-pulse rounded-xl overflow-hidden border"
+      style={{ backgroundColor: "#1a1a1a", borderColor: "#2a2a2a" }}
+    >
+      <div className="aspect-square w-full" style={{ backgroundColor: "#111111" }} />
+      <div className="flex justify-between items-center px-3 py-3 gap-2">
+        <div className="h-4 rounded w-2/5" style={{ backgroundColor: "#2a2a2a" }} />
+        <div className="h-4 rounded w-1/5" style={{ backgroundColor: "#2a2a2a" }} />
       </div>
     </div>
   )

@@ -14,48 +14,75 @@ const Login = ({ setCurrentView }: Props) => {
 
   return (
     <div
-      className="max-w-sm w-full flex flex-col items-center"
+      className="w-full max-w-sm rounded-xl p-8 flex flex-col items-center"
+      style={{ backgroundColor: "#1a1a1a" }}
       data-testid="login-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-8">
-        Sign in to access an enhanced shopping experience.
+      <h1 className="text-xl font-bold uppercase tracking-widest mb-2" style={{ color: "#fff" }}>
+        Willkommen zurück
+      </h1>
+      <p className="text-center text-sm mb-8" style={{ color: "#888" }}>
+        Melde dich an für ein besseres Einkaufserlebnis.
       </p>
+
       <form className="w-full" action={formAction}>
-        <div className="flex flex-col w-full gap-y-2">
-          <Input
-            label="Email"
-            name="email"
-            type="email"
-            title="Enter a valid email address."
-            autoComplete="email"
-            required
-            data-testid="email-input"
-          />
-          <Input
-            label="Password"
-            name="password"
-            type="password"
-            autoComplete="current-password"
-            required
-            data-testid="password-input"
-          />
+        <div className="flex flex-col w-full gap-y-3">
+          <div>
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#aaa" }}>
+              E-Mail
+            </label>
+            <Input
+              label="Email"
+              name="email"
+              type="email"
+              title="Enter a valid email address."
+              autoComplete="email"
+              required
+              data-testid="email-input"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#aaa" }}>
+              Passwort
+            </label>
+            <Input
+              label="Password"
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              required
+              data-testid="password-input"
+            />
+          </div>
         </div>
+
+        <div className="flex justify-end mt-2">
+          <button
+            type="button"
+            className="text-xs transition-colors hover:underline"
+            style={{ color: "#666" }}
+          >
+            Passwort vergessen?
+          </button>
+        </div>
+
         <ErrorMessage error={message} data-testid="login-error-message" />
+
         <SubmitButton data-testid="sign-in-button" className="w-full mt-6">
-          Sign in
+          Anmelden
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Not a member?{" "}
+
+      <span className="text-center text-sm mt-6" style={{ color: "#666" }}>
+        Noch kein Konto?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
-          className="underline"
+          className="font-semibold transition-colors hover:underline"
+          style={{ color: "#4ade80" }}
           data-testid="register-button"
         >
-          Join us
+          Jetzt registrieren
         </button>
-        .
       </span>
     </div>
   )

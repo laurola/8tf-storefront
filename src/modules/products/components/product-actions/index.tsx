@@ -3,7 +3,6 @@
 import { addToCart } from "@lib/data/cart"
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
 import { isEqual } from "lodash"
@@ -135,9 +134,19 @@ export default function ProductActions({
     setIsAdding(false)
   }
 
+  const isButtonDisabled =
+    !inStock || !selectedVariant || !!disabled || isAdding || !isValidVariant
+
+  const getButtonText = () => {
+    if (isAdding) return "Wird hinzugefügt..."
+    if (!selectedVariant && !options) return "Variante wählen"
+    if (!inStock || !isValidVariant) return "Nicht vorrätig"
+    return "In den Warenkorb"
+  }
+
   return (
     <>
-      <div className="flex flex-col gap-y-2" ref={actionsRef}>
+      <div className="flex flex-col gap-y-4" ref={actionsRef}>
         <div>
           {(product.variants?.length ?? 0) > 1 && (
             <div className="flex flex-col gap-y-4">
@@ -162,26 +171,44 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={selectedVariant} />
 
-        <Button
+        <button
           onClick={handleAddToCart}
-          disabled={
-            !inStock ||
-            !selectedVariant ||
-            !!disabled ||
-            isAdding ||
-            !isValidVariant
-          }
-          variant="primary"
-          className="w-full h-10"
-          isLoading={isAdding}
+          disabled={isButtonDisabled}
           data-testid="add-product-button"
+          className="w-full h-12 rounded-lg font-semibold text-sm uppercase tracking-wider transition-all duration-200"
+          style={
+            isButtonDisabled
+              ? {
+                  backgroundColor: "#1a1a1a",
+                  color: "#6b7280",
+                  border: "1px solid #333",
+                  cursor: "not-allowed",
+                }
+              : {
+                  backgroundColor: "transparent",
+                  color: "#4ade80",
+                  border: "2px solid #4ade80",
+                  cursor: "pointer",
+                }
+          }
+          onMouseEnter={(e) => {
+            if (!isButtonDisabled) {
+              const btn = e.currentTarget
+              btn.style.backgroundColor = "#4ade80"
+              btn.style.color = "#000000"
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!isButtonDisabled) {
+              const btn = e.currentTarget
+              btn.style.backgroundColor = "transparent"
+              btn.style.color = "#4ade80"
+            }
+          }}
         >
-          {!selectedVariant && !options
-            ? "Select variant"
-            : !inStock || !isValidVariant
-            ? "Out of stock"
-            : "Add to cart"}
-        </Button>
+          {getButtonText()}
+        </button>
+
         <MobileActions
           product={product}
           variant={selectedVariant}

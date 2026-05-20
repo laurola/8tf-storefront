@@ -1,5 +1,4 @@
 import { HttpTypes } from "@medusajs/types"
-import { clx } from "@medusajs/ui"
 import React from "react"
 
 type OptionSelectProps = {
@@ -23,26 +22,42 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
 
   return (
     <div className="flex flex-col gap-y-3">
-      <span className="text-sm">Select {title}</span>
+      <span
+        className="text-sm font-medium uppercase tracking-wider"
+        style={{ color: "#9ca3af" }}
+      >
+        {title}
+      </span>
       <div
-        className="flex flex-wrap justify-between gap-2"
+        className="flex flex-wrap gap-2"
         data-testid={dataTestId}
       >
         {filteredOptions.map((v) => {
+          const isSelected = v === current
           return (
             <button
               onClick={() => updateOption(option.id, v)}
               key={v}
-              className={clx(
-                "border-ui-border-base bg-ui-bg-subtle border text-small-regular h-10 rounded-rounded p-2 flex-1 ",
-                {
-                  "border-ui-border-interactive": v === current,
-                  "hover:shadow-elevation-card-rest transition-shadow ease-in-out duration-150":
-                    v !== current,
-                }
-              )}
               disabled={disabled}
               data-testid="option-button"
+              className="h-10 min-w-[3rem] px-4 rounded-lg text-sm font-medium transition-all duration-150"
+              style={{
+                backgroundColor: isSelected ? "rgba(74, 222, 128, 0.1)" : "#1a1a1a",
+                border: isSelected ? "2px solid #4ade80" : "1px solid #333333",
+                color: isSelected ? "#4ade80" : "#ffffff",
+                cursor: disabled ? "not-allowed" : "pointer",
+                opacity: disabled ? 0.5 : 1,
+              }}
+              onMouseEnter={(e) => {
+                if (!disabled && !isSelected) {
+                  e.currentTarget.style.backgroundColor = "#262626"
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!disabled && !isSelected) {
+                  e.currentTarget.style.backgroundColor = "#1a1a1a"
+                }
+              }}
             >
               {v}
             </button>
