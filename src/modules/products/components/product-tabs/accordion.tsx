@@ -1,6 +1,16 @@
-import { Text, clx } from "@medusajs/ui"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import React from "react"
+
+function clx(...args: (string | false | null | undefined | Record<string, boolean>)[]) {
+  return args.flatMap((a) => {
+    if (!a) return []
+    if (typeof a === "string") return [a]
+    return Object.entries(a).filter(([, v]) => v).map(([k]) => k)
+  }).join(" ")
+}
+const Text = ({ children, as: Tag = "span", size: _size, className, ...props }: { children?: React.ReactNode; as?: React.ElementType; size?: string; className?: string; [key: string]: unknown }) => (
+  <Tag className={className} {...props}>{children}</Tag>
+)
 
 type AccordionItemProps = AccordionPrimitive.AccordionItemProps & {
   title: string

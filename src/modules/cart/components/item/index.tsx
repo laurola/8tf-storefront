@@ -1,7 +1,14 @@
 "use client"
 
-import { clx } from "@medusajs/ui"
 import { updateLineItem } from "@lib/data/cart"
+
+function clx(...args: (string | false | null | undefined | Record<string, boolean>)[]) {
+  return args.flatMap((a) => {
+    if (!a) return []
+    if (typeof a === "string") return [a]
+    return Object.entries(a).filter(([, v]) => v).map(([k]) => k)
+  }).join(" ")
+}
 import { HttpTypes } from "@medusajs/types"
 import CartItemSelect from "@modules/cart/components/cart-item-select"
 import ErrorMessage from "@modules/checkout/components/error-message"

@@ -1,6 +1,13 @@
-import { clx } from "@medusajs/ui"
 import Image from "next/image"
 import React from "react"
+
+function clx(...args: (string | false | null | undefined | Record<string, boolean>)[]) {
+  return args.flatMap((a) => {
+    if (!a) return []
+    if (typeof a === "string") return [a]
+    return Object.entries(a).filter(([, v]) => v).map(([k]) => k)
+  }).join(" ")
+}
 
 type ThumbnailProps = {
   thumbnail?: string | null
