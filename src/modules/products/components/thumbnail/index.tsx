@@ -35,7 +35,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
         "relative w-full overflow-hidden",
         className,
         {
-          "aspect-[11/14]": isFeatured,
+          "aspect-[11/14]": !!isFeatured,
           "aspect-[9/16]": !isFeatured && size !== "square",
           "aspect-[1/1]": size === "square",
           "w-[180px]": size === "small",

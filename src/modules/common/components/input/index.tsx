@@ -86,7 +86,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             </button>
           )}
         </div>
-        {hasError && (
+        {!!hasError && (
           <p className="mt-1 text-xs text-red-500">
             {String(errors[name])}
           </p>
