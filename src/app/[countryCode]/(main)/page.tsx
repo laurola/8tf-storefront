@@ -38,13 +38,13 @@ const dummyProducts = [
 
 function FeaturedProductsDummy() {
   return (
-    <section className="w-full bg-zinc-950 py-16 px-6">
+    <section className="w-full bg-gray-50 py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10">
-          <h2 className="text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-3xl font-bold text-gray-900 tracking-tight">
             Produkte
           </h2>
-          <p className="text-zinc-400 mt-2 text-sm">
+          <p className="text-gray-500 mt-2 text-sm">
             Unsere meistverkauften Artikel
           </p>
         </div>
@@ -53,13 +53,13 @@ function FeaturedProductsDummy() {
           {dummyProducts.map((product) => (
             <div
               key={product.id}
-              className="group flex flex-col bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden hover:border-green-500/40 transition-all duration-300"
+              className="group flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-green-500/40 hover:shadow-md transition-all duration-300"
             >
               {/* Product image placeholder */}
-              <div className="w-full aspect-square bg-zinc-800 flex items-center justify-center">
+              <div className="w-full aspect-square bg-gray-100 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-16 h-16 text-zinc-600"
+                  className="w-16 h-16 text-gray-300"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -76,20 +76,20 @@ function FeaturedProductsDummy() {
               {/* Product info */}
               <div className="flex flex-col flex-1 p-5 gap-4">
                 <div className="flex-1">
-                  <h3 className="text-sm font-medium text-white leading-snug group-hover:text-green-300 transition-colors duration-200">
+                  <h3 className="text-sm font-medium text-gray-900 leading-snug group-hover:text-green-700 transition-colors duration-200">
                     {product.name}
                   </h3>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-bold text-green-400">
+                  <span className="text-lg font-bold text-green-600">
                     {product.price}
                   </span>
                 </div>
 
                 <button
                   type="button"
-                  className="w-full py-2.5 px-4 bg-zinc-800 hover:bg-green-500 border border-zinc-700 hover:border-green-500 text-white text-sm font-medium rounded-lg transition-all duration-200"
+                  className="w-full py-2.5 px-4 bg-gray-100 hover:bg-green-500 border border-gray-200 hover:border-green-500 text-gray-700 hover:text-white text-sm font-medium rounded-lg transition-all duration-200"
                 >
                   In den Warenkorb
                 </button>

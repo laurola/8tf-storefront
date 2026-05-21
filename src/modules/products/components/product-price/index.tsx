@@ -19,7 +19,7 @@ export default function ProductPrice({
     return (
       <div
         className="block w-32 h-9 rounded animate-pulse"
-        style={{ backgroundColor: "#1a1a1a" }}
+        style={{ backgroundColor: "#f3f4f6" }}
       />
     )
   }
@@ -29,12 +29,12 @@ export default function ProductPrice({
       <div className="flex items-baseline gap-x-3">
         <span
           className="text-3xl font-bold"
-          style={{ color: "#4ade80" }}
+          style={{ color: "#16a34a" }}
           data-testid="product-price"
           data-value={selectedPrice.calculated_price_number}
         >
           {!variant && (
-            <span className="text-lg font-normal mr-1" style={{ color: "#6b7280" }}>
+            <span className="text-lg font-normal mr-1" style={{ color: "#9ca3af" }}>
               ab
             </span>
           )}
@@ -44,7 +44,7 @@ export default function ProductPrice({
         {selectedPrice.price_type === "sale" && (
           <span
             className="text-lg line-through"
-            style={{ color: "#6b7280" }}
+            style={{ color: "#9ca3af" }}
             data-testid="original-product-price"
             data-value={selectedPrice.original_price_number}
           >
@@ -56,7 +56,7 @@ export default function ProductPrice({
       {selectedPrice.price_type === "sale" && (
         <span
           className="text-sm font-semibold"
-          style={{ color: "#4ade80" }}
+          style={{ color: "#16a34a" }}
         >
           -{selectedPrice.percentage_diff}% Rabatt
         </span>

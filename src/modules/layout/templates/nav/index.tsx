@@ -20,8 +20,8 @@ export default async function Nav() {
       <header
         className="w-full h-16"
         style={{
-          backgroundColor: "#0a0a0a",
-          boxShadow: "0 1px 20px rgba(0,0,0,0.4)",
+          backgroundColor: "#ffffff",
+          boxShadow: "0 1px 8px rgba(0,0,0,0.08)",
         }}
       >
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between w-full h-full">
@@ -34,7 +34,7 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="flex items-center gap-1 text-xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity"
+              className="flex items-center gap-1 text-xl font-bold tracking-tight text-gray-900 hover:opacity-80 transition-opacity"
               data-testid="nav-store-link"
             >
               <span>8TF</span>
@@ -44,7 +44,7 @@ export default async function Nav() {
                   width: "6px",
                   height: "6px",
                   borderRadius: "50%",
-                  backgroundColor: "#22c55e",
+                  backgroundColor: "#16a34a",
                   marginBottom: "2px",
                   flexShrink: 0,
                 }}
@@ -56,19 +56,19 @@ export default async function Nav() {
           <div className="hidden lg:flex items-center gap-x-8 h-full">
             <LocalizedClientLink
               href="/store"
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150"
             >
               Shop
             </LocalizedClientLink>
             <LocalizedClientLink
               href="/categories"
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150"
             >
               Kategorien
             </LocalizedClientLink>
             <LocalizedClientLink
               href="/about"
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150"
             >
               Über uns
             </LocalizedClientLink>
@@ -79,7 +79,7 @@ export default async function Nav() {
             <div className="hidden lg:flex items-center">
               <LocalizedClientLink
                 href="/account"
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-150"
+                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150"
                 data-testid="nav-account-link"
                 aria-label="Account"
               >
@@ -103,7 +103,7 @@ export default async function Nav() {
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="text-white/80 hover:text-white transition-colors duration-150 flex items-center gap-1.5"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-150 flex items-center gap-1.5"
                   href="/cart"
                   data-testid="nav-cart-link"
                 >

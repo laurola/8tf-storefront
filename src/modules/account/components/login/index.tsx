@@ -15,20 +15,20 @@ const Login = ({ setCurrentView }: Props) => {
   return (
     <div
       className="w-full max-w-sm rounded-xl p-8 flex flex-col items-center"
-      style={{ backgroundColor: "#1a1a1a" }}
+      style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       data-testid="login-page"
     >
-      <h1 className="text-xl font-bold uppercase tracking-widest mb-2" style={{ color: "#fff" }}>
+      <h1 className="text-xl font-bold uppercase tracking-widest mb-2" style={{ color: "#111827" }}>
         Willkommen zurück
       </h1>
-      <p className="text-center text-sm mb-8" style={{ color: "#888" }}>
+      <p className="text-center text-sm mb-8" style={{ color: "#6b7280" }}>
         Melde dich an für ein besseres Einkaufserlebnis.
       </p>
 
       <form className="w-full" action={formAction}>
         <div className="flex flex-col w-full gap-y-3">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#aaa" }}>
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#6b7280" }}>
               E-Mail
             </label>
             <Input
@@ -42,7 +42,7 @@ const Login = ({ setCurrentView }: Props) => {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#aaa" }}>
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#6b7280" }}>
               Passwort
             </label>
             <Input
@@ -60,7 +60,7 @@ const Login = ({ setCurrentView }: Props) => {
           <button
             type="button"
             className="text-xs transition-colors hover:underline"
-            style={{ color: "#666" }}
+            style={{ color: "#6b7280" }}
           >
             Passwort vergessen?
           </button>
@@ -73,12 +73,12 @@ const Login = ({ setCurrentView }: Props) => {
         </SubmitButton>
       </form>
 
-      <span className="text-center text-sm mt-6" style={{ color: "#666" }}>
+      <span className="text-center text-sm mt-6" style={{ color: "#6b7280" }}>
         Noch kein Konto?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
           className="font-semibold transition-colors hover:underline"
-          style={{ color: "#4ade80" }}
+          style={{ color: "#16a34a" }}
           data-testid="register-button"
         >
           Jetzt registrieren

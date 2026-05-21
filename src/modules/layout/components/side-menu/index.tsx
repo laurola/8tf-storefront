@@ -37,7 +37,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
               <div className="relative flex h-full">
                 <Popover.Button
                   data-testid="nav-menu-button"
-                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none text-white hover:text-[#4ade80]"
+                  className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none text-gray-700 hover:text-[#16a34a]"
                 >
                   Menu
                 </Popover.Button>
@@ -45,7 +45,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
 
               {open && (
                 <div
-                  className="fixed inset-0 z-[50] bg-black/60 pointer-events-auto"
+                  className="fixed inset-0 z-[50] bg-black/30 pointer-events-auto"
                   onClick={close}
                   data-testid="side-menu-backdrop"
                 />
@@ -64,13 +64,13 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                 <PopoverPanel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-[51] inset-x-0 text-sm m-2">
                   <div
                     data-testid="nav-menu-popup"
-                    className="flex flex-col h-full bg-[rgba(10,10,10,0.97)] border border-[#1a1a1a] rounded-xl justify-between p-6 shadow-2xl"
+                    className="flex flex-col h-full bg-white border border-[#e5e7eb] rounded-xl justify-between p-6 shadow-2xl"
                   >
                     <div className="flex justify-end" id="xmark">
                       <button
                         data-testid="close-menu-button"
                         onClick={close}
-                        className="text-gray-400 hover:text-white transition-colors duration-150 p-1"
+                        className="text-gray-400 hover:text-gray-900 transition-colors duration-150 p-1"
                       >
                         <XMark />
                       </button>
@@ -81,7 +81,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                           <li key={name}>
                             <LocalizedClientLink
                               href={href}
-                              className="text-3xl leading-10 font-semibold text-white hover:text-[#4ade80] transition-colors duration-200"
+                              className="text-3xl leading-10 font-semibold text-gray-900 hover:text-[#16a34a] transition-colors duration-200"
                               onClick={close}
                               data-testid={`${name.toLowerCase()}-link`}
                             >
@@ -94,7 +94,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                     <div className="flex flex-col gap-y-6">
                       {!!locales?.length && (
                         <div
-                          className="flex justify-between text-gray-400 hover:text-white transition-colors duration-150"
+                          className="flex justify-between text-gray-500 hover:text-gray-900 transition-colors duration-150"
                           onMouseEnter={languageToggleState.open}
                           onMouseLeave={languageToggleState.close}
                         >
@@ -112,7 +112,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                         </div>
                       )}
                       <div
-                        className="flex justify-between text-gray-400 hover:text-white transition-colors duration-150"
+                        className="flex justify-between text-gray-500 hover:text-gray-900 transition-colors duration-150"
                         onMouseEnter={countryToggleState.open}
                         onMouseLeave={countryToggleState.close}
                       >
@@ -129,7 +129,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                           )}
                         />
                       </div>
-                      <p className="text-xs text-gray-600">
+                      <p className="text-xs text-gray-400">
                         © {new Date().getFullYear()} 8TF Store. All rights reserved.
                       </p>
                     </div>

@@ -37,7 +37,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="flex flex-col w-full">
         {topLabel && (
-          <label className="mb-2 text-sm font-medium text-gray-400">
+          <label className="mb-2 text-sm font-medium text-[#6b7280]">
             {topLabel}
           </label>
         )}
@@ -49,13 +49,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             required={required}
             className={[
               "peer pt-4 pb-1 block w-full h-11 px-4 mt-0 rounded-md appearance-none",
-              "bg-[#1a1a1a] text-white",
+              "bg-white text-[#111827]",
               "border focus:outline-none focus:ring-0",
               "transition-colors duration-200",
               hasError
                 ? "border-red-500 focus:border-red-500"
-                : "border-[#333] focus:border-[#4ade80]",
-              "placeholder-shown:border-[#333]",
+                : "border-[#e5e7eb] focus:border-[#16a34a]",
+              "placeholder-shown:border-[#e5e7eb]",
             ].join(" ")}
             {...props}
             ref={inputRef}
@@ -66,10 +66,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={[
               "flex items-center justify-center mx-3 px-1 absolute duration-300 origin-0",
               "pointer-events-none select-none",
-              "top-3 text-gray-400 text-sm",
+              "top-3 text-[#6b7280] text-sm",
               "transition-all",
-              "peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400",
-              "peer-focus:top-1 peer-focus:text-xs peer-focus:text-[#4ade80]",
+              "peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-[#6b7280]",
+              "peer-focus:top-1 peer-focus:text-xs peer-focus:text-[#16a34a]",
               "peer-not-placeholder-shown:top-1 peer-not-placeholder-shown:text-xs",
             ].join(" ")}
           >
@@ -80,7 +80,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="text-gray-400 hover:text-white px-4 focus:outline-none transition-colors duration-150 absolute right-0 top-3"
+              className="text-[#6b7280] hover:text-[#111827] px-4 focus:outline-none transition-colors duration-150 absolute right-0 top-3"
             >
               {showPassword ? <Eye /> : <EyeOff />}
             </button>

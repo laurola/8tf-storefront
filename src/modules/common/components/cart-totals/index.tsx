@@ -27,7 +27,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
 
   return (
     <div>
-      <div className="flex flex-col gap-y-2 text-sm" style={{ color: "#9ca3af" }}>
+      <div className="flex flex-col gap-y-2 text-sm" style={{ color: "#6b7280" }}>
         <div className="flex items-center justify-between">
           <span>Zwischensumme (ohne Versand & Steuern)</span>
           <span data-testid="cart-subtotal" data-value={item_subtotal || 0}>
@@ -44,7 +44,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
           <div className="flex items-center justify-between">
             <span>Rabatt</span>
             <span
-              style={{ color: "#4ade80" }}
+              style={{ color: "#16a34a" }}
               data-testid="cart-discount"
               data-value={discount_subtotal || 0}
             >
@@ -64,13 +64,13 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
         </div>
       </div>
 
-      <div className="h-px w-full my-4" style={{ backgroundColor: "#2a2a2a" }} />
+      <div className="h-px w-full my-4" style={{ backgroundColor: "#e5e7eb" }} />
 
       <div className="flex items-center justify-between mb-2">
-        <span className="text-base font-bold text-white">Gesamt</span>
+        <span className="text-base font-bold text-[#111827]">Gesamt</span>
         <span
           className="text-xl font-bold"
-          style={{ color: "#4ade80" }}
+          style={{ color: "#16a34a" }}
           data-testid="cart-total"
           data-value={total || 0}
         >
@@ -78,7 +78,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
         </span>
       </div>
 
-      <div className="h-px w-full mt-4" style={{ backgroundColor: "#2a2a2a" }} />
+      <div className="h-px w-full mt-4" style={{ backgroundColor: "#e5e7eb" }} />
     </div>
   )
 }

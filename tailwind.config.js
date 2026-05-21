@@ -35,9 +35,9 @@ module.exports = {
           90: "#111827",
         },
         brand: {
-          green: "#4ade80",
-          "green-dark": "#16a34a",
-          "green-light": "#86efac",
+          green: "#16a34a",
+          "green-dark": "#15803d",
+          "green-light": "#4ade80",
           black: "#0a0a0a",
           "black-soft": "#111111",
           "black-card": "#1a1a1a",

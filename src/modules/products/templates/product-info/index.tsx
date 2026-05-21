@@ -15,9 +15,9 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
               href={`/collections/${product.collection.handle}`}
               className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider"
               style={{
-                backgroundColor: "rgba(74, 222, 128, 0.15)",
-                color: "#4ade80",
-                border: "1px solid rgba(74, 222, 128, 0.3)",
+                backgroundColor: "rgba(22, 163, 74, 0.1)",
+                color: "#16a34a",
+                border: "1px solid rgba(22, 163, 74, 0.3)",
               }}
             >
               {product.collection.title}
@@ -30,9 +30,9 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             <span
               className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider"
               style={{
-                backgroundColor: "rgba(74, 222, 128, 0.15)",
-                color: "#4ade80",
-                border: "1px solid rgba(74, 222, 128, 0.3)",
+                backgroundColor: "rgba(22, 163, 74, 0.1)",
+                color: "#16a34a",
+                border: "1px solid rgba(22, 163, 74, 0.3)",
               }}
             >
               {product.categories[0].name}
@@ -42,7 +42,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
 
         <h2
           className="text-3xl font-bold leading-tight"
-          style={{ color: "#ffffff" }}
+          style={{ color: "#111827" }}
           data-testid="product-title"
         >
           {product.title}
@@ -51,7 +51,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         {product.description && (
           <p
             className="text-base leading-relaxed whitespace-pre-line"
-            style={{ color: "#9ca3af" }}
+            style={{ color: "#6b7280" }}
             data-testid="product-description"
           >
             {product.description}

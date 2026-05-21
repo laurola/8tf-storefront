@@ -8,20 +8,20 @@ const CheckoutSummary = ({ cart }: { cart: any }) => {
     <div className="sticky top-0 flex flex-col-reverse small:flex-col gap-y-4 py-8 small:py-0">
       <div
         className="w-full flex flex-col rounded-xl p-6"
-        style={{ backgroundColor: "#1a1a1a" }}
+        style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       >
         <h2
           className="text-xl font-bold uppercase tracking-widest mb-1"
-          style={{ color: "#4ade80" }}
+          style={{ color: "#16a34a" }}
         >
           Bestellübersicht
         </h2>
 
-        <div className="my-4" style={{ borderColor: "#333", borderTopWidth: 1 }} />
+        <div className="my-4" style={{ borderColor: "#e5e7eb", borderTopWidth: 1 }} />
 
         <ItemsPreviewTemplate cart={cart} />
 
-        <div className="my-4" style={{ borderColor: "#333", borderTopWidth: 1 }} />
+        <div className="my-4" style={{ borderColor: "#e5e7eb", borderTopWidth: 1 }} />
 
         <CartTotals totals={cart} />
 

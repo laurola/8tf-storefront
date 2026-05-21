@@ -43,14 +43,14 @@ const FilterRadioGroup = ({
               style={
                 i.value === value
                   ? {
-                      backgroundColor: "rgba(74, 222, 128, 0.12)",
-                      borderColor: "#4ade80",
-                      color: "#4ade80",
+                      backgroundColor: "rgba(22, 163, 74, 0.08)",
+                      borderColor: "#16a34a",
+                      color: "#16a34a",
                     }
                   : {
                       backgroundColor: "transparent",
-                      borderColor: "#3a3a3a",
-                      color: "#9ca3af",
+                      borderColor: "#e5e7eb",
+                      color: "#6b7280",
                     }
               }
               data-testid="radio-label"

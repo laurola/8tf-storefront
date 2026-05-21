@@ -11,8 +11,8 @@ export default function AboutPage() {
     <div
       style={{
         minHeight: "100vh",
-        backgroundColor: "#0a0a0a",
-        color: "#f5f5f5",
+        backgroundColor: "#ffffff",
+        color: "#111827",
       }}
     >
       {/* Hero */}
@@ -21,7 +21,7 @@ export default function AboutPage() {
           position: "relative",
           overflow: "hidden",
           padding: "120px 5% 80px",
-          borderBottom: "1px solid #1a1a1a",
+          borderBottom: "1px solid #e5e7eb",
         }}
       >
         <div
@@ -29,7 +29,7 @@ export default function AboutPage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)",
+              "radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
             pointerEvents: "none",
           }}
@@ -41,7 +41,7 @@ export default function AboutPage() {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(74,222,128,0.12) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(22,163,74,0.06) 0%, transparent 70%)",
             top: "50%",
             right: "10%",
             transform: "translateY(-50%)",
@@ -55,14 +55,14 @@ export default function AboutPage() {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              backgroundColor: "rgba(74,222,128,0.1)",
-              border: "1px solid rgba(74,222,128,0.3)",
+              backgroundColor: "rgba(22,163,74,0.08)",
+              border: "1px solid rgba(22,163,74,0.25)",
               borderRadius: "999px",
               padding: "5px 16px",
               fontSize: "12px",
               fontWeight: 600,
               letterSpacing: "0.12em",
-              color: "#4ade80",
+              color: "#16a34a",
               textTransform: "uppercase",
               marginBottom: "28px",
             }}
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
-                backgroundColor: "#4ade80",
+                backgroundColor: "#16a34a",
                 display: "inline-block",
               }}
             />
@@ -85,6 +85,7 @@ export default function AboutPage() {
               letterSpacing: "-0.03em",
               lineHeight: 1.05,
               margin: "0 0 24px",
+              color: "#111827",
             }}
           >
             Wir leben für den{" "}
@@ -103,7 +104,7 @@ export default function AboutPage() {
           <p
             style={{
               fontSize: "1.2rem",
-              color: "rgba(255,255,255,0.5)",
+              color: "#6b7280",
               lineHeight: 1.7,
               maxWidth: "560px",
             }}
@@ -132,14 +133,14 @@ export default function AboutPage() {
                 fontWeight: 800,
                 letterSpacing: "-0.02em",
                 marginBottom: "20px",
-                color: "#f5f5f5",
+                color: "#111827",
               }}
             >
               Unsere Geschichte
             </h2>
             <p
               style={{
-                color: "rgba(255,255,255,0.5)",
+                color: "#6b7280",
                 lineHeight: 1.8,
                 fontSize: "1rem",
                 marginBottom: "20px",
@@ -151,7 +152,7 @@ export default function AboutPage() {
             </p>
             <p
               style={{
-                color: "rgba(255,255,255,0.5)",
+                color: "#6b7280",
                 lineHeight: 1.8,
                 fontSize: "1rem",
                 marginBottom: "20px",
@@ -164,7 +165,7 @@ export default function AboutPage() {
             </p>
             <p
               style={{
-                color: "rgba(255,255,255,0.5)",
+                color: "#6b7280",
                 lineHeight: 1.8,
                 fontSize: "1rem",
               }}
@@ -191,8 +192,8 @@ export default function AboutPage() {
               <div
                 key={s.label}
                 style={{
-                  backgroundColor: "#111111",
-                  border: "1px solid #1f1f1f",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e5e7eb",
                   borderRadius: "12px",
                   padding: "28px 24px",
                   display: "flex",
@@ -204,7 +205,7 @@ export default function AboutPage() {
                   style={{
                     fontSize: "2.2rem",
                     fontWeight: 800,
-                    color: "#4ade80",
+                    color: "#16a34a",
                     letterSpacing: "-0.02em",
                     lineHeight: 1,
                   }}
@@ -214,7 +215,7 @@ export default function AboutPage() {
                 <span
                   style={{
                     fontSize: "12px",
-                    color: "rgba(255,255,255,0.4)",
+                    color: "#6b7280",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
                     fontWeight: 500,
@@ -232,8 +233,8 @@ export default function AboutPage() {
       <div
         style={{
           padding: "80px 5%",
-          borderTop: "1px solid #1a1a1a",
-          backgroundColor: "#080808",
+          borderTop: "1px solid #e5e7eb",
+          backgroundColor: "#f9fafb",
         }}
       >
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -243,7 +244,7 @@ export default function AboutPage() {
               fontWeight: 800,
               letterSpacing: "-0.02em",
               marginBottom: "48px",
-              color: "#f5f5f5",
+              color: "#111827",
               textAlign: "center",
             }}
           >
@@ -276,8 +277,8 @@ export default function AboutPage() {
               <div
                 key={v.title}
                 style={{
-                  backgroundColor: "#111111",
-                  border: "1px solid #1f1f1f",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #e5e7eb",
                   borderRadius: "12px",
                   padding: "36px 28px",
                 }}
@@ -285,7 +286,7 @@ export default function AboutPage() {
                 <span
                   style={{
                     fontSize: "1.8rem",
-                    color: "#4ade80",
+                    color: "#16a34a",
                     display: "block",
                     marginBottom: "16px",
                   }}
@@ -297,7 +298,7 @@ export default function AboutPage() {
                     fontSize: "1.1rem",
                     fontWeight: 700,
                     marginBottom: "12px",
-                    color: "#f5f5f5",
+                    color: "#111827",
                     letterSpacing: "-0.01em",
                   }}
                 >
@@ -305,7 +306,7 @@ export default function AboutPage() {
                 </h3>
                 <p
                   style={{
-                    color: "rgba(255,255,255,0.45)",
+                    color: "#6b7280",
                     lineHeight: 1.7,
                     fontSize: "0.95rem",
                   }}
@@ -323,7 +324,8 @@ export default function AboutPage() {
         style={{
           padding: "80px 5%",
           textAlign: "center",
-          borderTop: "1px solid #1a1a1a",
+          borderTop: "1px solid #e5e7eb",
+          backgroundColor: "#ffffff",
         }}
       >
         <h2
@@ -332,14 +334,14 @@ export default function AboutPage() {
             fontWeight: 800,
             letterSpacing: "-0.02em",
             marginBottom: "16px",
-            color: "#f5f5f5",
+            color: "#111827",
           }}
         >
           Bereit für mehr Performance?
         </h2>
         <p
           style={{
-            color: "rgba(255,255,255,0.45)",
+            color: "#6b7280",
             marginBottom: "36px",
             fontSize: "1rem",
           }}
@@ -352,14 +354,14 @@ export default function AboutPage() {
             display: "inline-flex",
             alignItems: "center",
             gap: "10px",
-            backgroundColor: "#4ade80",
-            color: "#0a0a0a",
+            backgroundColor: "#16a34a",
+            color: "#ffffff",
             fontWeight: 700,
             fontSize: "15px",
             letterSpacing: "0.04em",
             padding: "16px 40px",
             borderRadius: "4px",
-            border: "2px solid #4ade80",
+            border: "2px solid #16a34a",
             textDecoration: "none",
             textTransform: "uppercase",
           }}

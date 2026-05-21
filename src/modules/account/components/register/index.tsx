@@ -18,13 +18,13 @@ const Register = ({ setCurrentView }: Props) => {
   return (
     <div
       className="w-full max-w-sm rounded-xl p-8 flex flex-col items-center"
-      style={{ backgroundColor: "#1a1a1a" }}
+      style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       data-testid="register-page"
     >
-      <h1 className="text-xl font-bold uppercase tracking-widest mb-2" style={{ color: "#fff" }}>
+      <h1 className="text-xl font-bold uppercase tracking-widest mb-2" style={{ color: "#111827" }}>
         Konto erstellen
       </h1>
-      <p className="text-center text-sm mb-8" style={{ color: "#888" }}>
+      <p className="text-center text-sm mb-8" style={{ color: "#6b7280" }}>
         Werde 8TF-Mitglied und genieße exklusive Vorteile.
       </p>
 
@@ -71,20 +71,20 @@ const Register = ({ setCurrentView }: Props) => {
 
         <ErrorMessage error={message} data-testid="register-error" />
 
-        <p className="text-center text-xs mt-6" style={{ color: "#555" }}>
+        <p className="text-center text-xs mt-6" style={{ color: "#6b7280" }}>
           Mit der Registrierung stimmst du den{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
-            className="underline transition-colors hover:text-white"
-            style={{ color: "#888" }}
+            className="underline transition-colors hover:text-gray-900"
+            style={{ color: "#111827" }}
           >
             Datenschutzbestimmungen
           </LocalizedClientLink>{" "}
           und den{" "}
           <LocalizedClientLink
             href="/content/terms-of-use"
-            className="underline transition-colors hover:text-white"
-            style={{ color: "#888" }}
+            className="underline transition-colors hover:text-gray-900"
+            style={{ color: "#111827" }}
           >
             Nutzungsbedingungen
           </LocalizedClientLink>{" "}
@@ -96,12 +96,12 @@ const Register = ({ setCurrentView }: Props) => {
         </SubmitButton>
       </form>
 
-      <span className="text-center text-sm mt-6" style={{ color: "#666" }}>
+      <span className="text-center text-sm mt-6" style={{ color: "#6b7280" }}>
         Bereits Mitglied?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="font-semibold transition-colors hover:underline"
-          style={{ color: "#4ade80" }}
+          style={{ color: "#16a34a" }}
         >
           Anmelden
         </button>

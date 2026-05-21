@@ -69,7 +69,7 @@ export default async function PaginatedProducts({
   return (
     <>
       {/* Product count */}
-      <p className="text-xs mb-6" style={{ color: "#6b7280" }}>
+      <p className="text-xs mb-6" style={{ color: "#9ca3af" }}>
         {count} {count === 1 ? "product" : "products"}
       </p>
 

@@ -6,14 +6,14 @@ const EmptyCartMessage = () => {
       className="py-48 px-2 flex flex-col justify-center items-center text-center"
       data-testid="empty-cart-message"
     >
-      <div className="mb-8" style={{ color: "#2a2a2a" }}>
+      <div className="mb-8" style={{ color: "#e5e7eb" }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="96"
           height="96"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#4ade80"
+          stroke="#16a34a"
           strokeWidth="1.2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -26,7 +26,7 @@ const EmptyCartMessage = () => {
         </svg>
       </div>
 
-      <h1 className="text-3xl font-bold text-white mb-4">
+      <h1 className="text-3xl font-bold mb-4" style={{ color: "#111827" }}>
         Dein Warenkorb ist leer
       </h1>
 
@@ -36,15 +36,15 @@ const EmptyCartMessage = () => {
 
       <LocalizedClientLink href="/store">
         <button
-          className="px-8 py-3 rounded-xl font-bold text-black transition-colors duration-200"
-          style={{ backgroundColor: "#4ade80" }}
+          className="px-8 py-3 rounded-xl font-bold transition-colors duration-200"
+          style={{ backgroundColor: "#111827", color: "#ffffff" }}
           onMouseEnter={(e) => {
             ;(e.currentTarget as HTMLButtonElement).style.backgroundColor =
-              "#6ee7a0"
+              "#1f2937"
           }}
           onMouseLeave={(e) => {
             ;(e.currentTarget as HTMLButtonElement).style.backgroundColor =
-              "#4ade80"
+              "#111827"
           }}
         >
           Jetzt shoppen

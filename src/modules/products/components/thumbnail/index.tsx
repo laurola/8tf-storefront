@@ -44,7 +44,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
           "w-full": size === "full",
         }
       )}
-      style={{ backgroundColor: "#111111" }}
+      style={{ backgroundColor: "#f3f4f6" }}
       data-testid={dataTestid}
     >
       <ImageOrPlaceholder image={initialImage} size={size} />
@@ -69,11 +69,11 @@ const ImageOrPlaceholder = ({
   ) : (
     <div
       className="w-full h-full absolute inset-0 flex items-center justify-center"
-      style={{ backgroundColor: "#111111" }}
+      style={{ backgroundColor: "#f3f4f6" }}
     >
       <span
         className="text-2xl font-bold tracking-widest select-none"
-        style={{ color: "#2a2a2a" }}
+        style={{ color: "#d1d5db" }}
       >
         8TF
       </span>

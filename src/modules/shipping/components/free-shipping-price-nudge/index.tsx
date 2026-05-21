@@ -210,17 +210,17 @@ function FreeShippingPopup({
     >
       <div>
         <Button
-          className="rounded-full bg-neutral-900 shadow-none outline-none border-none text-[15px] p-2"
+          className="rounded-full bg-white border border-[#e5e7eb] shadow-none outline-none text-[15px] p-2 text-[#6b7280] hover:text-[#111827]"
           onClick={() => setIsClosed(true)}
         >
           <XMark />
         </Button>
       </div>
 
-      <div className="w-[400px] bg-black text-white p-6 rounded-lg ">
+      <div className="w-[400px] bg-white text-[#111827] p-6 rounded-lg border border-[#e5e7eb] shadow-lg">
         <div className="pb-4">
           <div className="space-y-3">
-            <div className="flex justify-between text-[15px] text-neutral-400">
+            <div className="flex justify-between text-[15px] text-[#6b7280]">
               <div>
                 {price.target_reached ? (
                   <div className="flex items-center gap-1.5">
@@ -238,7 +238,7 @@ function FreeShippingPopup({
                 })}
               >
                 Only{" "}
-                <span className="text-white">
+                <span className="text-[#111827] font-semibold">
                   {convertToLocale({
                     amount: price.target_remaining,
                     currency_code: cart.currency_code,
@@ -250,28 +250,28 @@ function FreeShippingPopup({
             <div className="flex justify-between gap-1">
               <div
                 className={clx(
-                  "bg-gradient-to-r from-zinc-400 to-zinc-500 h-1.5 rounded-full max-w-full duration-500 ease-in-out",
+                  "bg-gradient-to-r from-zinc-300 to-zinc-400 h-1.5 rounded-full max-w-full duration-500 ease-in-out",
                   {
                     "from-green-400 to-green-500": price.target_reached,
                   }
                 )}
                 style={{ width: `${price.remaining_percentage}%` }}
               ></div>
-              <div className="bg-zinc-600 h-1.5 rounded-full w-fit flex-grow"></div>
+              <div className="bg-[#e5e7eb] h-1.5 rounded-full w-fit flex-grow"></div>
             </div>
           </div>
         </div>
 
         <div className="flex gap-3">
           <LocalizedClientLink
-            className="rounded-2xl bg-transparent shadow-none outline-none border-[1px] border-white text-[15px] py-2.5 px-4"
+            className="rounded-2xl bg-transparent shadow-none outline-none border-[1px] border-[#e5e7eb] text-[#111827] text-[15px] py-2.5 px-4"
             href="/cart"
           >
             View cart
           </LocalizedClientLink>
 
           <LocalizedClientLink
-            className="flex-grow rounded-2xl bg-white text-neutral-950 shadow-none outline-none border-[1px] border-white text-[15px] py-2.5 px-4 text-center"
+            className="flex-grow rounded-2xl bg-[#16a34a] text-white shadow-none outline-none border-[1px] border-[#16a34a] text-[15px] py-2.5 px-4 text-center"
             href="/store"
           >
             View products

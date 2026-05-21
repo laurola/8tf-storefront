@@ -12,8 +12,8 @@ const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
   const items = cart?.items
   return (
     <div>
-      <div className="pb-4 flex items-center border-b" style={{ borderColor: "#2a2a2a" }}>
-        <h1 className="text-3xl font-bold text-white tracking-tight">Warenkorb</h1>
+      <div className="pb-4 flex items-center border-b" style={{ borderColor: "#e5e7eb" }}>
+        <h1 className="text-3xl font-bold tracking-tight" style={{ color: "#111827" }}>Warenkorb</h1>
       </div>
 
       <div className="mt-2">

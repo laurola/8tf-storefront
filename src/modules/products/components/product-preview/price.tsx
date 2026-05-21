@@ -10,7 +10,7 @@ export default async function PreviewPrice({ price }: { price: VariantPrice }) {
       {price.price_type === "sale" && (
         <span
           className="text-xs line-through"
-          style={{ color: "#6b7280" }}
+          style={{ color: "#9ca3af" }}
           data-testid="original-price"
         >
           {price.original_price}
@@ -19,14 +19,14 @@ export default async function PreviewPrice({ price }: { price: VariantPrice }) {
       {price.price_type === "sale" && (
         <span
           className="text-xs font-semibold px-1.5 py-0.5 rounded"
-          style={{ backgroundColor: "#4ade80", color: "#0a0a0a" }}
+          style={{ backgroundColor: "#16a34a", color: "#ffffff" }}
         >
           SALE
         </span>
       )}
       <span
         className="text-sm font-semibold"
-        style={{ color: "#4ade80" }}
+        style={{ color: "#16a34a" }}
         data-testid="price"
       >
         {price.calculated_price}

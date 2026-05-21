@@ -10,9 +10,9 @@ export default async function Footer() {
   const productCategories = await listCategories()
 
   return (
-    <footer style={{ backgroundColor: "#0a0a0a" }} className="w-full">
+    <footer style={{ backgroundColor: "#f9fafb" }} className="w-full">
       {/* Top divider */}
-      <div className="w-full h-px" style={{ backgroundColor: "#1a1a1a" }} />
+      <div className="w-full h-px" style={{ backgroundColor: "#e5e7eb" }} />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Main footer content */}
@@ -21,7 +21,7 @@ export default async function Footer() {
           <div className="flex flex-col gap-y-4 lg:max-w-xs">
             <LocalizedClientLink
               href="/"
-              className="flex items-center gap-1 text-2xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity w-fit"
+              className="flex items-center gap-1 text-2xl font-bold tracking-tight text-gray-900 hover:opacity-80 transition-opacity w-fit"
             >
               <span>8TF</span>
               <span
@@ -30,7 +30,7 @@ export default async function Footer() {
                   width: "7px",
                   height: "7px",
                   borderRadius: "50%",
-                  backgroundColor: "#22c55e",
+                  backgroundColor: "#16a34a",
                   marginBottom: "2px",
                   flexShrink: 0,
                 }}
@@ -45,7 +45,7 @@ export default async function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-12 gap-y-10">
             {/* Kategorien */}
             <div className="flex flex-col gap-y-4">
-              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#22c55e" }}>
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#16a34a" }}>
                 Kategorien
               </span>
               <ul className="flex flex-col gap-y-3">
@@ -57,7 +57,7 @@ export default async function Footer() {
                         <LocalizedClientLink
                           href={`/categories/${c.handle}`}
                           className="text-sm transition-colors duration-150"
-                          style={{ color: "#9ca3af" }}
+                          style={{ color: "#6b7280" }}
                           data-testid="category-link"
                         >
                           {c.name}
@@ -71,7 +71,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href="/categories/greifreifen"
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         Greifreifen
                       </LocalizedClientLink>
@@ -80,7 +80,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href="/categories/bereifung"
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         Bereifung
                       </LocalizedClientLink>
@@ -89,7 +89,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href="/categories/laufraeder"
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         Laufräder
                       </LocalizedClientLink>
@@ -98,7 +98,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href="/categories/handschuhe"
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         Handschuhe
                       </LocalizedClientLink>
@@ -110,7 +110,7 @@ export default async function Footer() {
 
             {/* Shop */}
             <div className="flex flex-col gap-y-4">
-              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#22c55e" }}>
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#16a34a" }}>
                 Shop
               </span>
               <ul className="flex flex-col gap-y-3">
@@ -120,7 +120,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href={`/collections/${c.handle}`}
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         {c.title}
                       </LocalizedClientLink>
@@ -132,7 +132,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href="/store"
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         Alle Produkte
                       </LocalizedClientLink>
@@ -141,7 +141,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href="/store?sort=newest"
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         Neuheiten
                       </LocalizedClientLink>
@@ -150,7 +150,7 @@ export default async function Footer() {
                       <LocalizedClientLink
                         href="/store?tag=sale"
                         className="text-sm transition-colors duration-150"
-                        style={{ color: "#9ca3af" }}
+                        style={{ color: "#6b7280" }}
                       >
                         Sale
                       </LocalizedClientLink>
@@ -162,7 +162,7 @@ export default async function Footer() {
 
             {/* Info */}
             <div className="flex flex-col gap-y-4">
-              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#22c55e" }}>
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#16a34a" }}>
                 Info
               </span>
               <ul className="flex flex-col gap-y-3">
@@ -170,7 +170,7 @@ export default async function Footer() {
                   <LocalizedClientLink
                     href="/about"
                     className="text-sm transition-colors duration-150"
-                    style={{ color: "#9ca3af" }}
+                    style={{ color: "#6b7280" }}
                   >
                     Über uns
                   </LocalizedClientLink>
@@ -179,7 +179,7 @@ export default async function Footer() {
                   <LocalizedClientLink
                     href="/shipping"
                     className="text-sm transition-colors duration-150"
-                    style={{ color: "#9ca3af" }}
+                    style={{ color: "#6b7280" }}
                   >
                     Versand
                   </LocalizedClientLink>
@@ -188,7 +188,7 @@ export default async function Footer() {
                   <LocalizedClientLink
                     href="/contact"
                     className="text-sm transition-colors duration-150"
-                    style={{ color: "#9ca3af" }}
+                    style={{ color: "#6b7280" }}
                   >
                     Kontakt
                   </LocalizedClientLink>
@@ -199,24 +199,24 @@ export default async function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="w-full h-px" style={{ backgroundColor: "#1a1a1a" }} />
+        <div className="w-full h-px" style={{ backgroundColor: "#e5e7eb" }} />
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-y-3">
-          <span className="text-xs" style={{ color: "#4b5563" }}>
+          <span className="text-xs" style={{ color: "#6b7280" }}>
             © {new Date().getFullYear()} EightTimesFaster GmbH. Alle Rechte vorbehalten.
           </span>
           <div className="flex items-center gap-x-5">
             <LocalizedClientLink
               href="/privacy"
               className="text-xs transition-colors duration-150"
-              style={{ color: "#4b5563" }}
+              style={{ color: "#6b7280" }}
             >
               Datenschutz
             </LocalizedClientLink>
-            <span style={{ color: "#1f2937" }}>—</span>
+            <span style={{ color: "#9ca3af" }}>—</span>
             <LocalizedClientLink
               href="/imprint"
               className="text-xs transition-colors duration-150"
-              style={{ color: "#4b5563" }}
+              style={{ color: "#6b7280" }}
             >
               Impressum
             </LocalizedClientLink>

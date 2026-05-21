@@ -28,16 +28,16 @@ export default async function CheckoutForm({
     <div className="w-full grid grid-cols-1 gap-y-3">
       <div
         className="rounded-xl p-6"
-        style={{ backgroundColor: "#1a1a1a" }}
+        style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       >
         <div className="flex items-center gap-x-3 mb-6">
           <div
             className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold"
-            style={{ backgroundColor: "#4ade80", color: "#0a0a0a" }}
+            style={{ backgroundColor: "#16a34a", color: "#ffffff" }}
           >
             1
           </div>
-          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#fff" }}>
+          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#111827" }}>
             Lieferadresse
           </h2>
         </div>
@@ -46,16 +46,16 @@ export default async function CheckoutForm({
 
       <div
         className="rounded-xl p-6"
-        style={{ backgroundColor: "#1a1a1a" }}
+        style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       >
         <div className="flex items-center gap-x-3 mb-6">
           <div
             className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold"
-            style={{ backgroundColor: "#4ade80", color: "#0a0a0a" }}
+            style={{ backgroundColor: "#16a34a", color: "#ffffff" }}
           >
             2
           </div>
-          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#fff" }}>
+          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#111827" }}>
             Versandmethode
           </h2>
         </div>
@@ -64,16 +64,16 @@ export default async function CheckoutForm({
 
       <div
         className="rounded-xl p-6"
-        style={{ backgroundColor: "#1a1a1a" }}
+        style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       >
         <div className="flex items-center gap-x-3 mb-6">
           <div
             className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold"
-            style={{ backgroundColor: "#4ade80", color: "#0a0a0a" }}
+            style={{ backgroundColor: "#16a34a", color: "#ffffff" }}
           >
             3
           </div>
-          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#fff" }}>
+          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#111827" }}>
             Zahlung
           </h2>
         </div>
@@ -82,16 +82,16 @@ export default async function CheckoutForm({
 
       <div
         className="rounded-xl p-6"
-        style={{ backgroundColor: "#1a1a1a" }}
+        style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       >
         <div className="flex items-center gap-x-3 mb-6">
           <div
             className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold"
-            style={{ backgroundColor: "#4ade80", color: "#0a0a0a" }}
+            style={{ backgroundColor: "#16a34a", color: "#ffffff" }}
           >
             4
           </div>
-          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#fff" }}>
+          <h2 className="text-lg font-semibold uppercase tracking-wide" style={{ color: "#111827" }}>
             Überprüfung
           </h2>
         </div>

@@ -10,23 +10,23 @@ type OverviewProps = {
 
 const Overview = ({ customer, orders }: OverviewProps) => {
   return (
-    <div data-testid="overview-page-wrapper" style={{ backgroundColor: "#0a0a0a" }}>
+    <div data-testid="overview-page-wrapper" style={{ backgroundColor: "#ffffff" }}>
       <div className="hidden small:block">
         {/* Header greeting */}
         <div className="flex justify-between items-center mb-6">
           <span
             className="text-2xl font-bold"
-            style={{ color: "#fff" }}
+            style={{ color: "#111827" }}
             data-testid="welcome-message"
             data-value={customer?.first_name}
           >
-            Hey, <span style={{ color: "#4ade80" }}>{customer?.first_name}</span>
+            Hey, <span style={{ color: "#16a34a" }}>{customer?.first_name}</span>
           </span>
-          <span className="text-sm" style={{ color: "#666" }}>
+          <span className="text-sm" style={{ color: "#6b7280" }}>
             Angemeldet als:{" "}
             <span
               className="font-semibold"
-              style={{ color: "#aaa" }}
+              style={{ color: "#111827" }}
               data-testid="customer-email"
               data-value={customer?.email}
             >
@@ -38,26 +38,26 @@ const Overview = ({ customer, orders }: OverviewProps) => {
         {/* Stats cards */}
         <div
           className="border-t pt-8 mb-8"
-          style={{ borderColor: "#222" }}
+          style={{ borderColor: "#e5e7eb" }}
         >
           <div className="flex items-start gap-x-4 mb-8">
             <div
               className="flex flex-col gap-y-3 rounded-xl p-6 flex-1"
-              style={{ backgroundColor: "#1a1a1a" }}
+              style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
             >
-              <h3 className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#888" }}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#6b7280" }}>
                 Profil
               </h3>
               <div className="flex items-end gap-x-2">
                 <span
                   className="text-4xl font-black leading-none"
-                  style={{ color: "#4ade80" }}
+                  style={{ color: "#16a34a" }}
                   data-testid="customer-profile-completion"
                   data-value={getProfileCompletion(customer)}
                 >
                   {getProfileCompletion(customer)}%
                 </span>
-                <span className="text-xs uppercase tracking-wider pb-1" style={{ color: "#555" }}>
+                <span className="text-xs uppercase tracking-wider pb-1" style={{ color: "#6b7280" }}>
                   Vollständig
                 </span>
               </div>
@@ -65,21 +65,21 @@ const Overview = ({ customer, orders }: OverviewProps) => {
 
             <div
               className="flex flex-col gap-y-3 rounded-xl p-6 flex-1"
-              style={{ backgroundColor: "#1a1a1a" }}
+              style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
             >
-              <h3 className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#888" }}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#6b7280" }}>
                 Adressen
               </h3>
               <div className="flex items-end gap-x-2">
                 <span
                   className="text-4xl font-black leading-none"
-                  style={{ color: "#4ade80" }}
+                  style={{ color: "#16a34a" }}
                   data-testid="addresses-count"
                   data-value={customer?.addresses?.length || 0}
                 >
                   {customer?.addresses?.length || 0}
                 </span>
-                <span className="text-xs uppercase tracking-wider pb-1" style={{ color: "#555" }}>
+                <span className="text-xs uppercase tracking-wider pb-1" style={{ color: "#6b7280" }}>
                   Gespeichert
                 </span>
               </div>
@@ -88,7 +88,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
 
           {/* Recent orders */}
           <div className="flex flex-col gap-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#888" }}>
+            <h3 className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#6b7280" }}>
               Letzte Bestellungen
             </h3>
             <ul className="flex flex-col gap-y-3" data-testid="orders-wrapper">
@@ -104,28 +104,28 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                     >
                       <div
                         className="flex justify-between items-center p-4 rounded-xl transition-all group"
-                        style={{ backgroundColor: "#1a1a1a" }}
+                        style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
                       >
                         <div className="grid grid-cols-3 text-sm gap-x-4 flex-1">
-                          <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: "#888" }}>
+                          <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: "#6b7280" }}>
                             Datum
                           </span>
-                          <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: "#888" }}>
+                          <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: "#6b7280" }}>
                             Bestellnr.
                           </span>
-                          <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: "#888" }}>
+                          <span className="text-xs uppercase tracking-wider font-semibold" style={{ color: "#6b7280" }}>
                             Betrag
                           </span>
                           <span
                             className="mt-1"
-                            style={{ color: "#ccc" }}
+                            style={{ color: "#111827" }}
                             data-testid="order-created-date"
                           >
                             {new Date(order.created_at).toLocaleDateString("de-DE")}
                           </span>
                           <span
                             className="mt-1"
-                            style={{ color: "#ccc" }}
+                            style={{ color: "#111827" }}
                             data-testid="order-id"
                             data-value={order.display_id}
                           >
@@ -133,7 +133,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                           </span>
                           <span
                             className="mt-1 font-semibold"
-                            style={{ color: "#4ade80" }}
+                            style={{ color: "#16a34a" }}
                             data-testid="order-amount"
                           >
                             {convertToLocale({
@@ -144,7 +144,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
                         </div>
                         <button
                           className="flex items-center justify-between ml-4 transition-colors group-hover:opacity-100 opacity-50"
-                          style={{ color: "#4ade80" }}
+                          style={{ color: "#16a34a" }}
                           data-testid="open-order-button"
                         >
                           <span className="sr-only">
@@ -159,7 +159,7 @@ const Overview = ({ customer, orders }: OverviewProps) => {
               ) : (
                 <span
                   className="text-sm py-6 text-center"
-                  style={{ color: "#555" }}
+                  style={{ color: "#6b7280" }}
                   data-testid="no-orders-message"
                 >
                   Noch keine Bestellungen

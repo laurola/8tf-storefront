@@ -13,7 +13,7 @@ const CartTemplate = ({
   customer: HttpTypes.StoreCustomer | null
 }) => {
   return (
-    <div className="py-12 min-h-screen" style={{ backgroundColor: "#0a0a0a" }}>
+    <div className="py-12 min-h-screen" style={{ backgroundColor: "#ffffff" }}>
       <div className="content-container" data-testid="cart-container">
         {cart?.items?.length ? (
           <div className="grid grid-cols-1 small:grid-cols-[1fr_380px] gap-x-10">

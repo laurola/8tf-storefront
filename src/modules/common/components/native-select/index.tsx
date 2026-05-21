@@ -42,12 +42,12 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
           onBlur={() => innerRef.current?.blur()}
           className={clx(
             "relative flex items-center text-sm",
-            "bg-[#1a1a1a] border border-[#333] rounded-md",
-            "focus-within:border-[#4ade80] transition-colors duration-200",
+            "bg-white border border-[#e5e7eb] rounded-md",
+            "focus-within:border-[#16a34a] transition-colors duration-200",
             className,
             {
-              "text-gray-500": isPlaceholder,
-              "text-white": !isPlaceholder,
+              "text-[#6b7280]": isPlaceholder,
+              "text-[#111827]": !isPlaceholder,
             }
           )}
         >
@@ -57,12 +57,12 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             {...props}
             className="appearance-none flex-1 bg-transparent border-none px-4 py-2.5 transition-colors duration-150 outline-none text-inherit"
           >
-            <option disabled value="" className="bg-[#1a1a1a] text-gray-500">
+            <option disabled value="" className="bg-white text-[#6b7280]">
               {placeholder}
             </option>
             {children}
           </select>
-          <span className="absolute right-4 inset-y-0 flex items-center pointer-events-none text-[#4ade80]">
+          <span className="absolute right-4 inset-y-0 flex items-center pointer-events-none text-[#16a34a]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

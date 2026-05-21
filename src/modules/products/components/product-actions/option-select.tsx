@@ -1,3 +1,5 @@
+"use client"
+
 import { HttpTypes } from "@medusajs/types"
 import React from "react"
 
@@ -24,7 +26,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
     <div className="flex flex-col gap-y-3">
       <span
         className="text-sm font-medium uppercase tracking-wider"
-        style={{ color: "#9ca3af" }}
+        style={{ color: "#374151" }}
       >
         {title}
       </span>
@@ -42,20 +44,22 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
               data-testid="option-button"
               className="h-10 min-w-[3rem] px-4 rounded-lg text-sm font-medium transition-all duration-150"
               style={{
-                backgroundColor: isSelected ? "rgba(74, 222, 128, 0.1)" : "#1a1a1a",
-                border: isSelected ? "2px solid #4ade80" : "1px solid #333333",
-                color: isSelected ? "#4ade80" : "#ffffff",
+                backgroundColor: isSelected ? "#111827" : "#ffffff",
+                border: isSelected ? "2px solid #111827" : "1px solid #e5e7eb",
+                color: isSelected ? "#ffffff" : "#374151",
                 cursor: disabled ? "not-allowed" : "pointer",
                 opacity: disabled ? 0.5 : 1,
               }}
               onMouseEnter={(e) => {
                 if (!disabled && !isSelected) {
-                  e.currentTarget.style.backgroundColor = "#262626"
+                  e.currentTarget.style.backgroundColor = "#f9fafb"
+                  e.currentTarget.style.borderColor = "#111827"
                 }
               }}
               onMouseLeave={(e) => {
                 if (!disabled && !isSelected) {
-                  e.currentTarget.style.backgroundColor = "#1a1a1a"
+                  e.currentTarget.style.backgroundColor = "#ffffff"
+                  e.currentTarget.style.borderColor = "#e5e7eb"
                 }
               }}
             >

@@ -15,7 +15,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
     return (
       <div
         className="w-full aspect-square rounded-xl"
-        style={{ backgroundColor: "#111111" }}
+        style={{ backgroundColor: "#f3f4f6" }}
       />
     )
   }
@@ -28,7 +28,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
       <div
         className="relative w-full overflow-hidden rounded-xl"
         style={{
-          backgroundColor: "#111111",
+          backgroundColor: "#f3f4f6",
           aspectRatio: "4/5",
         }}
       >
@@ -58,10 +58,10 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
                 style={{
                   width: "72px",
                   height: "72px",
-                  backgroundColor: "#111111",
+                  backgroundColor: "#f3f4f6",
                   border: isSelected
-                    ? "2px solid #4ade80"
-                    : "2px solid #262626",
+                    ? "2px solid #16a34a"
+                    : "2px solid #e5e7eb",
                   padding: 0,
                   cursor: "pointer",
                 }}

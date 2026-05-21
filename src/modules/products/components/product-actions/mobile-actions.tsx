@@ -16,8 +16,8 @@ const Button = ({ children, onClick, disabled, className, variant: _v, isLoading
     className={className}
     data-testid={dt}
     style={{
-      backgroundColor: disabled ? "#333" : "#4ade80",
-      color: disabled ? "#666" : "#0a0a0a",
+      backgroundColor: disabled ? "#f3f4f6" : "#111827",
+      color: disabled ? "#9ca3af" : "#ffffff",
       fontWeight: 700,
       fontSize: "15px",
       padding: "14px 20px",

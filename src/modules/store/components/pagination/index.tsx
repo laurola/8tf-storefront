@@ -35,14 +35,14 @@ export function Pagination({
       style={
         isCurrent
           ? {
-              backgroundColor: "rgba(74, 222, 128, 0.15)",
-              borderColor: "#4ade80",
-              color: "#4ade80",
+              backgroundColor: "#111827",
+              borderColor: "#111827",
+              color: "#ffffff",
             }
           : {
-              backgroundColor: "transparent",
-              borderColor: "#2a2a2a",
-              color: "#9ca3af",
+              backgroundColor: "#ffffff",
+              borderColor: "#e5e7eb",
+              color: "#374151",
             }
       }
       disabled={isCurrent}
@@ -56,7 +56,7 @@ export function Pagination({
     <span
       key={key}
       className="w-9 h-9 flex items-center justify-center text-sm cursor-default"
-      style={{ color: "#6b7280" }}
+      style={{ color: "#9ca3af" }}
     >
       ...
     </span>

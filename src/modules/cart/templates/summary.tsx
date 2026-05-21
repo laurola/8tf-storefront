@@ -27,15 +27,15 @@ const Summary = ({ cart }: SummaryProps) => {
   return (
     <div
       className="flex flex-col gap-y-5 rounded-2xl p-6"
-      style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+      style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
     >
-      <h2 className="text-2xl font-bold text-white tracking-tight">
+      <h2 className="text-2xl font-bold tracking-tight" style={{ color: "#111827" }}>
         Zusammenfassung
       </h2>
 
       <DiscountCode cart={cart} />
 
-      <div className="h-px w-full" style={{ backgroundColor: "#2a2a2a" }} />
+      <div className="h-px w-full" style={{ backgroundColor: "#e5e7eb" }} />
 
       <CartTotals totals={cart} />
 
@@ -44,15 +44,15 @@ const Summary = ({ cart }: SummaryProps) => {
         data-testid="checkout-button"
       >
         <button
-          className="w-full h-12 rounded-xl font-bold text-base text-black transition-colors duration-200"
-          style={{ backgroundColor: "#4ade80" }}
+          className="w-full h-12 rounded-xl font-bold text-base transition-colors duration-200"
+          style={{ backgroundColor: "#111827", color: "#ffffff" }}
           onMouseEnter={(e) => {
             ;(e.currentTarget as HTMLButtonElement).style.backgroundColor =
-              "#6ee7a0"
+              "#1f2937"
           }}
           onMouseLeave={(e) => {
             ;(e.currentTarget as HTMLButtonElement).style.backgroundColor =
-              "#4ade80"
+              "#111827"
           }}
         >
           Zur Kasse

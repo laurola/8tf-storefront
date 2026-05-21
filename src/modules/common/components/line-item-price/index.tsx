@@ -39,7 +39,7 @@ const LineItemPrice = ({
               </span>
             </p>
             {style === "default" && (
-              <span className="text-[#4ade80] text-sm font-medium">
+              <span className="text-[#16a34a] text-sm font-medium">
                 -{getPercentageDiff(originalPrice, currentPrice || 0)}%
               </span>
             )}
@@ -47,8 +47,8 @@ const LineItemPrice = ({
         )}
         <span
           className={clx("text-sm font-medium", {
-            "text-[#4ade80]": hasReducedPrice,
-            "text-white": !hasReducedPrice,
+            "text-[#16a34a]": hasReducedPrice,
+            "text-[#111827]": !hasReducedPrice,
           })}
           data-testid="product-price"
         >

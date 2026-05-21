@@ -21,7 +21,7 @@ const StoreTemplate = ({
   return (
     <div
       className="min-h-screen w-full"
-      style={{ backgroundColor: "#0a0a0a" }}
+      style={{ backgroundColor: "#f9fafb" }}
       data-testid="category-container"
     >
       <div className="content-container py-8">
@@ -29,12 +29,12 @@ const StoreTemplate = ({
         <div className="mb-8">
           <h1
             className="text-3xl font-bold tracking-tight"
-            style={{ color: "#ffffff" }}
+            style={{ color: "#111827" }}
             data-testid="store-page-title"
           >
             Shop
           </h1>
-          <p className="mt-1 text-sm" style={{ color: "#6b7280" }}>
+          <p className="mt-1 text-sm" style={{ color: "#9ca3af" }}>
             All products
           </p>
         </div>
@@ -42,7 +42,7 @@ const StoreTemplate = ({
         {/* Toolbar row: sort on the left */}
         <div
           className="flex items-center gap-4 mb-8 p-4 rounded-xl border"
-          style={{ backgroundColor: "#1a1a1a", borderColor: "#2a2a2a" }}
+          style={{ backgroundColor: "#ffffff", borderColor: "#e5e7eb" }}
         >
           <RefinementList sortBy={sort} />
         </div>

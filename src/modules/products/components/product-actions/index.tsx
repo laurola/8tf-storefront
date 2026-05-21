@@ -179,30 +179,30 @@ export default function ProductActions({
           style={
             isButtonDisabled
               ? {
-                  backgroundColor: "#1a1a1a",
-                  color: "#6b7280",
-                  border: "1px solid #333",
+                  backgroundColor: "#f3f4f6",
+                  color: "#9ca3af",
+                  border: "1px solid #e5e7eb",
                   cursor: "not-allowed",
                 }
               : {
-                  backgroundColor: "transparent",
-                  color: "#4ade80",
-                  border: "2px solid #4ade80",
+                  backgroundColor: "#111827",
+                  color: "#ffffff",
+                  border: "2px solid #111827",
                   cursor: "pointer",
                 }
           }
           onMouseEnter={(e) => {
             if (!isButtonDisabled) {
               const btn = e.currentTarget
-              btn.style.backgroundColor = "#4ade80"
-              btn.style.color = "#000000"
+              btn.style.backgroundColor = "#374151"
+              btn.style.borderColor = "#374151"
             }
           }}
           onMouseLeave={(e) => {
             if (!isButtonDisabled) {
               const btn = e.currentTarget
-              btn.style.backgroundColor = "transparent"
-              btn.style.color = "#4ade80"
+              btn.style.backgroundColor = "#111827"
+              btn.style.borderColor = "#111827"
             }
           }}
         >

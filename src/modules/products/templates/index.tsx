@@ -29,7 +29,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   }
 
   return (
-    <div style={{ backgroundColor: "#0a0a0a", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#f9fafb", minHeight: "100vh" }}>
       <div
         className="content-container py-8 lg:py-12"
         data-testid="product-container"

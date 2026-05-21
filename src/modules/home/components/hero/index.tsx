@@ -5,14 +5,14 @@ const Hero = () => {
   return (
     <div
       className="relative w-full overflow-hidden"
-      style={{ minHeight: "100vh", backgroundColor: "#0a0a0a" }}
+      style={{ minHeight: "100vh", backgroundColor: "#f8fafc" }}
     >
       {/* Dot-grid background pattern */}
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -22,11 +22,11 @@ const Hero = () => {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(135deg, transparent, transparent 80px, rgba(74,222,128,0.03) 80px, rgba(74,222,128,0.03) 81px)",
+            "repeating-linear-gradient(135deg, transparent, transparent 80px, rgba(22,163,74,0.03) 80px, rgba(22,163,74,0.03) 81px)",
         }}
       />
 
-      {/* Primary green glow orb */}
+      {/* Primary subtle green glow orb */}
       <div
         className="absolute z-0"
         style={{
@@ -34,7 +34,7 @@ const Hero = () => {
           height: "700px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(74,222,128,0.18) 0%, rgba(34,197,94,0.10) 40%, transparent 70%)",
+            "radial-gradient(circle, rgba(22,163,74,0.06) 0%, rgba(22,163,74,0.03) 40%, transparent 70%)",
           top: "50%",
           left: "55%",
           transform: "translate(-50%, -50%)",
@@ -51,7 +51,7 @@ const Hero = () => {
           height: "300px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(74,222,128,0.22) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(22,163,74,0.06) 0%, transparent 70%)",
           top: "25%",
           left: "65%",
           animation: "orbPulse 4s ease-in-out infinite reverse",
@@ -66,7 +66,7 @@ const Hero = () => {
           width: "600px",
           height: "600px",
           borderRadius: "50%",
-          border: "1px solid rgba(74,222,128,0.12)",
+          border: "1px solid rgba(22,163,74,0.10)",
           top: "50%",
           left: "60%",
           transform: "translate(-50%, -50%)",
@@ -79,7 +79,7 @@ const Hero = () => {
           width: "420px",
           height: "420px",
           borderRadius: "50%",
-          border: "1px solid rgba(74,222,128,0.08)",
+          border: "1px solid rgba(22,163,74,0.06)",
           top: "50%",
           left: "60%",
           transform: "translate(-50%, -50%)",
@@ -96,7 +96,7 @@ const Hero = () => {
           width: "4px",
           height: "120px",
           background:
-            "linear-gradient(to bottom, #4ade80, rgba(74,222,128,0))",
+            "linear-gradient(to bottom, rgba(22,163,74,0.4), rgba(22,163,74,0))",
         }}
       />
       <div
@@ -107,7 +107,7 @@ const Hero = () => {
           width: "120px",
           height: "4px",
           background:
-            "linear-gradient(to right, #4ade80, rgba(74,222,128,0))",
+            "linear-gradient(to right, rgba(22,163,74,0.4), rgba(22,163,74,0))",
         }}
       />
 
@@ -120,7 +120,7 @@ const Hero = () => {
           width: "4px",
           height: "120px",
           background:
-            "linear-gradient(to top, #4ade80, rgba(74,222,128,0))",
+            "linear-gradient(to top, rgba(22,163,74,0.4), rgba(22,163,74,0))",
         }}
       />
       <div
@@ -131,7 +131,7 @@ const Hero = () => {
           width: "120px",
           height: "4px",
           background:
-            "linear-gradient(to left, #4ade80, rgba(74,222,128,0))",
+            "linear-gradient(to left, rgba(22,163,74,0.4), rgba(22,163,74,0))",
         }}
       />
 
@@ -158,14 +158,14 @@ const Hero = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              backgroundColor: "rgba(74,222,128,0.1)",
-              border: "1px solid rgba(74,222,128,0.3)",
+              backgroundColor: "rgba(22,163,74,0.08)",
+              border: "1px solid rgba(22,163,74,0.25)",
               borderRadius: "999px",
               padding: "6px 18px",
               fontSize: "13px",
               fontWeight: 600,
               letterSpacing: "0.12em",
-              color: "#4ade80",
+              color: "#16a34a",
               textTransform: "uppercase",
             }}
           >
@@ -174,7 +174,7 @@ const Hero = () => {
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
-                backgroundColor: "#4ade80",
+                backgroundColor: "#16a34a",
                 display: "inline-block",
                 animation: "orbPulse 2s ease-in-out infinite",
               }}
@@ -198,7 +198,7 @@ const Hero = () => {
           <span
             style={{
               display: "block",
-              color: "#f5f5f5",
+              color: "#111827",
               fontSize: "clamp(2.8rem, 7vw, 7rem)",
             }}
           >
@@ -219,7 +219,7 @@ const Hero = () => {
           <span
             style={{
               display: "block",
-              color: "#f5f5f5",
+              color: "#111827",
               fontSize: "clamp(2.8rem, 7vw, 7rem)",
             }}
           >
@@ -234,7 +234,7 @@ const Hero = () => {
             opacity: 0,
             animationDelay: "0.45s",
             fontSize: "clamp(1rem, 2vw, 1.3rem)",
-            color: "rgba(255,255,255,0.55)",
+            color: "#6b7280",
             fontWeight: 400,
             letterSpacing: "0.01em",
             lineHeight: 1.6,
@@ -264,29 +264,29 @@ const Hero = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "10px",
-              backgroundColor: "#4ade80",
-              color: "#0a0a0a",
+              backgroundColor: "#16a34a",
+              color: "#ffffff",
               fontWeight: 700,
               fontSize: "15px",
               letterSpacing: "0.04em",
               padding: "16px 36px",
               borderRadius: "4px",
-              border: "2px solid #4ade80",
+              border: "2px solid #16a34a",
               textDecoration: "none",
               transition: "all 0.25s ease",
               textTransform: "uppercase",
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLAnchorElement
-              el.style.backgroundColor = "#22c55e"
-              el.style.borderColor = "#22c55e"
+              el.style.backgroundColor = "#15803d"
+              el.style.borderColor = "#15803d"
               el.style.transform = "translateY(-2px)"
-              el.style.boxShadow = "0 8px 30px rgba(74,222,128,0.4)"
+              el.style.boxShadow = "0 8px 30px rgba(22,163,74,0.25)"
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLAnchorElement
-              el.style.backgroundColor = "#4ade80"
-              el.style.borderColor = "#4ade80"
+              el.style.backgroundColor = "#16a34a"
+              el.style.borderColor = "#16a34a"
               el.style.transform = "translateY(0)"
               el.style.boxShadow = "none"
             }}
@@ -316,27 +316,27 @@ const Hero = () => {
               alignItems: "center",
               gap: "10px",
               backgroundColor: "transparent",
-              color: "#f5f5f5",
+              color: "#374151",
               fontWeight: 600,
               fontSize: "15px",
               letterSpacing: "0.04em",
               padding: "14px 34px",
               borderRadius: "4px",
-              border: "2px solid rgba(255,255,255,0.2)",
+              border: "2px solid #374151",
               textDecoration: "none",
               transition: "all 0.25s ease",
               textTransform: "uppercase",
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLAnchorElement
-              el.style.borderColor = "#4ade80"
-              el.style.color = "#4ade80"
+              el.style.borderColor = "#16a34a"
+              el.style.color = "#16a34a"
               el.style.transform = "translateY(-2px)"
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLAnchorElement
-              el.style.borderColor = "rgba(255,255,255,0.2)"
-              el.style.color = "#f5f5f5"
+              el.style.borderColor = "#374151"
+              el.style.color = "#374151"
               el.style.transform = "translateY(0)"
             }}
           >
@@ -366,7 +366,7 @@ const Hero = () => {
                 style={{
                   fontSize: "2rem",
                   fontWeight: 800,
-                  color: "#4ade80",
+                  color: "#16a34a",
                   letterSpacing: "-0.02em",
                   lineHeight: 1,
                 }}
@@ -376,7 +376,7 @@ const Hero = () => {
               <span
                 style={{
                   fontSize: "13px",
-                  color: "rgba(255,255,255,0.4)",
+                  color: "#6b7280",
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   fontWeight: 500,
@@ -406,7 +406,7 @@ const Hero = () => {
           style={{
             fontSize: "11px",
             letterSpacing: "0.15em",
-            color: "rgba(255,255,255,0.3)",
+            color: "#9ca3af",
             textTransform: "uppercase",
             fontWeight: 500,
           }}
@@ -417,7 +417,7 @@ const Hero = () => {
           style={{
             width: "24px",
             height: "38px",
-            border: "2px solid rgba(255,255,255,0.15)",
+            border: "2px solid #9ca3af",
             borderRadius: "12px",
             display: "flex",
             justifyContent: "center",
@@ -428,7 +428,7 @@ const Hero = () => {
             style={{
               width: "4px",
               height: "8px",
-              backgroundColor: "#4ade80",
+              backgroundColor: "#16a34a",
               borderRadius: "2px",
               animation: "scrollDot 2s ease-in-out infinite",
             }}
@@ -442,7 +442,7 @@ const Hero = () => {
         style={{
           height: "200px",
           background:
-            "linear-gradient(to top, rgba(10,10,10,0.9), transparent)",
+            "linear-gradient(to top, rgba(249,250,251,0.9), transparent)",
           pointerEvents: "none",
         }}
       />

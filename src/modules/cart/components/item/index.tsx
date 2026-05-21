@@ -54,7 +54,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
   return (
     <div
       className="rounded-xl p-4 flex flex-col gap-y-2"
-      style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+      style={{ backgroundColor: "#f9fafb", border: "1px solid #e5e7eb" }}
       data-testid="product-row"
     >
     <div className="flex items-center gap-x-4">
@@ -65,7 +65,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
           "w-16 h-16": type === "preview",
           "w-20 h-20 small:w-24 small:h-24": type === "full",
         })}
-        style={{ backgroundColor: "#0a0a0a" }}
+        style={{ backgroundColor: "#e5e7eb" }}
       >
         <Thumbnail
           thumbnail={item.thumbnail}
@@ -78,7 +78,8 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
       <div className="flex-1 min-w-0">
         <LocalizedClientLink href={`/products/${item.product_handle}`}>
           <span
-            className="block font-semibold text-white truncate text-sm leading-tight"
+            className="block font-semibold truncate text-sm leading-tight"
+            style={{ color: "#111827" }}
             data-testid="product-title"
           >
             {item.product_title}
@@ -90,7 +91,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
         />
 
         {type === "preview" && (
-          <span className="flex gap-x-1 mt-1 text-xs" style={{ color: "#9ca3af" }}>
+          <span className="flex gap-x-1 mt-1 text-xs" style={{ color: "#6b7280" }}>
             <span>{item.quantity}x </span>
             <LineItemUnitPrice
               item={item}
@@ -141,7 +142,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
       {type === "full" && (
         <div
           className="hidden small:flex items-center justify-end w-20 flex-shrink-0 text-sm"
-          style={{ color: "#9ca3af" }}
+          style={{ color: "#6b7280" }}
         >
           <LineItemUnitPrice
             item={item}
@@ -159,7 +160,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
       >
         <span
           className="font-bold text-sm"
-          style={{ color: "#4ade80" }}
+          style={{ color: "#16a34a" }}
         >
           <LineItemPrice
             item={item}

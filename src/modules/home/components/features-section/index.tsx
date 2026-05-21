@@ -66,13 +66,13 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="w-full bg-zinc-950 py-20 px-6 border-t border-zinc-800">
+    <section className="w-full bg-gray-50 py-20 px-6 border-t border-gray-200">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-3xl font-bold text-gray-900 tracking-tight">
             Warum 8TF?
           </h2>
-          <p className="text-zinc-400 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
             Wir bauen Produkte für Athleten, die keine Kompromisse eingehen.
           </p>
         </div>
@@ -81,16 +81,16 @@ const FeaturesSection = () => {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group flex flex-col items-start gap-5 bg-zinc-900 border border-zinc-800 rounded-xl p-8 hover:border-green-500/40 transition-all duration-300"
+              className="group flex flex-col items-start gap-5 bg-white border border-gray-200 rounded-xl p-8 hover:border-green-500/40 hover:shadow-md transition-all duration-300"
             >
-              <div className="text-green-400 group-hover:text-green-300 transition-colors duration-200">
+              <div className="text-green-600 group-hover:text-green-500 transition-colors duration-200">
                 {feature.icon}
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="text-gray-500 text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>

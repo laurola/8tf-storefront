@@ -81,7 +81,7 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <PopoverButton className="h-full">
           <LocalizedClientLink
-            className="hover:text-white text-gray-300 transition-colors duration-150"
+            className="hover:text-gray-900 text-gray-600 transition-colors duration-150"
             href="/cart"
             data-testid="nav-cart-link"
           >
@@ -102,8 +102,8 @@ const CartDropdown = ({
             static
             className="hidden small:block absolute top-[calc(100%+1px)] right-0 w-[420px] rounded-b-2xl overflow-hidden shadow-2xl"
             style={{
-              backgroundColor: "#111111",
-              border: "1px solid #2a2a2a",
+              backgroundColor: "#ffffff",
+              border: "1px solid #e5e7eb",
               borderTop: "none",
             }}
             data-testid="nav-cart-dropdown"
@@ -111,13 +111,13 @@ const CartDropdown = ({
             {/* Header */}
             <div
               className="px-5 py-4 flex items-center justify-between"
-              style={{ borderBottom: "1px solid #2a2a2a" }}
+              style={{ borderBottom: "1px solid #e5e7eb" }}
             >
-              <h3 className="text-base font-bold text-white">Warenkorb</h3>
+              <h3 className="text-base font-bold text-gray-900">Warenkorb</h3>
               {totalItems > 0 && (
                 <span
                   className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                  style={{ backgroundColor: "#4ade80", color: "#000" }}
+                  style={{ backgroundColor: "#4ade80", color: "#14532d" }}
                 >
                   {totalItems}
                 </span>
@@ -138,8 +138,8 @@ const CartDropdown = ({
                       <div
                         className="flex items-center gap-x-3 rounded-xl p-3"
                         style={{
-                          backgroundColor: "#1a1a1a",
-                          border: "1px solid #2a2a2a",
+                          backgroundColor: "#f9fafb",
+                          border: "1px solid #e5e7eb",
                         }}
                         key={item.id}
                         data-testid="cart-item"
@@ -147,7 +147,7 @@ const CartDropdown = ({
                         <LocalizedClientLink
                           href={`/products/${item.product_handle}`}
                           className="w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden"
-                          style={{ backgroundColor: "#0a0a0a" }}
+                          style={{ backgroundColor: "#f3f4f6" }}
                         >
                           <Thumbnail
                             thumbnail={item.thumbnail}
@@ -162,7 +162,7 @@ const CartDropdown = ({
                                 href={`/products/${item.product_handle}`}
                                 data-testid="product-link"
                               >
-                                <span className="text-sm font-semibold text-white truncate block">
+                                <span className="text-sm font-semibold text-gray-900 truncate block">
                                   {item.title}
                                 </span>
                               </LocalizedClientLink>
@@ -182,7 +182,7 @@ const CartDropdown = ({
                             </div>
                             <div
                               className="text-sm font-bold flex-shrink-0"
-                              style={{ color: "#4ade80" }}
+                              style={{ color: "#16a34a" }}
                             >
                               <LineItemPrice
                                 item={item}
@@ -206,7 +206,7 @@ const CartDropdown = ({
                 {/* Footer */}
                 <div
                   className="px-5 py-4 flex flex-col gap-y-3"
-                  style={{ borderTop: "1px solid #2a2a2a" }}
+                  style={{ borderTop: "1px solid #e5e7eb" }}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-sm" style={{ color: "#9ca3af" }}>
@@ -214,7 +214,7 @@ const CartDropdown = ({
                       <span className="text-xs">(ohne Steuern)</span>
                     </span>
                     <span
-                      className="text-base font-bold text-white"
+                      className="text-base font-bold text-gray-900"
                       data-testid="cart-subtotal"
                       data-value={subtotal}
                     >
@@ -226,17 +226,17 @@ const CartDropdown = ({
                   </div>
                   <LocalizedClientLink href="/cart" passHref>
                     <button
-                      className="w-full h-11 rounded-xl font-bold text-sm text-black transition-colors duration-200"
-                      style={{ backgroundColor: "#4ade80" }}
+                      className="w-full h-11 rounded-xl font-bold text-sm text-white transition-colors duration-200"
+                      style={{ backgroundColor: "#16a34a" }}
                       onMouseEnter={(e) => {
                         ;(
                           e.currentTarget as HTMLButtonElement
-                        ).style.backgroundColor = "#6ee7a0"
+                        ).style.backgroundColor = "#15803d"
                       }}
                       onMouseLeave={(e) => {
                         ;(
                           e.currentTarget as HTMLButtonElement
-                        ).style.backgroundColor = "#4ade80"
+                        ).style.backgroundColor = "#16a34a"
                       }}
                       data-testid="go-to-cart-button"
                     >
@@ -249,7 +249,7 @@ const CartDropdown = ({
               <div className="flex py-16 flex-col gap-y-4 items-center justify-center">
                 <div
                   className="flex items-center justify-center w-12 h-12 rounded-full"
-                  style={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a" }}
+                  style={{ backgroundColor: "#f3f4f6", border: "1px solid #e5e7eb" }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,7 @@ const CartDropdown = ({
                     height="20"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#4ade80"
+                    stroke="#16a34a"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -272,17 +272,17 @@ const CartDropdown = ({
                 </span>
                 <LocalizedClientLink href="/store">
                   <button
-                    className="px-5 py-2 rounded-lg text-sm font-bold text-black transition-colors duration-200"
-                    style={{ backgroundColor: "#4ade80" }}
+                    className="px-5 py-2 rounded-lg text-sm font-bold text-white transition-colors duration-200"
+                    style={{ backgroundColor: "#16a34a" }}
                     onMouseEnter={(e) => {
                       ;(
                         e.currentTarget as HTMLButtonElement
-                      ).style.backgroundColor = "#6ee7a0"
+                      ).style.backgroundColor = "#15803d"
                     }}
                     onMouseLeave={(e) => {
                       ;(
                         e.currentTarget as HTMLButtonElement
-                      ).style.backgroundColor = "#4ade80"
+                      ).style.backgroundColor = "#16a34a"
                     }}
                     onClick={close}
                   >
